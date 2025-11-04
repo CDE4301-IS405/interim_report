@@ -35,63 +35,76 @@
 
 <body>
   <!-- Add a button to toggle the sidebar -->
-  <sl-button class="sidebar-toggle" variant="primary" size="medium" onclick="toggleSidebar()">
+  <sl-button class="sidebar-toggle" variant="neutral" size="small" onclick="toggleSidebar()">
     <sl-icon name="list" label="Toggle Table of Contents"></sl-icon>
   </sl-button>
 
-  <!-- Sidebar Drawer -->
-  <sl-drawer label="Table of Contents" class="drawer-placement-start" placement="start" id="toc-drawer">
+  <!-- Sidebar as a fixed element (not drawer) -->
+  <div class="sidebar" id="toc-sidebar">
+    <h3>Table of Contents</h3>
     <div class="table-of-content">
       <sl-tree>
+        <sl-tree-item>
+            <a href="#title">Title</a>
+        </sl-tree-item>
         <sl-tree-item expanded>
           <a href="#section-header-1">1. Section Header 1</a> <!-- href tag must match div id tag to allow link-->
           <sl-tree-item>
-            <a href="#sub-section-1-header-1" onclick="closeSidebar()">1.1. Sub-section Header 1</a>
+            <a href="#sub-section-1-header-1">1.1. Sub-section Header 1</a>
           </sl-tree-item>
           <sl-tree-item>
-            <a href="#sub-section-1-header-2" onclick="closeSidebar()">1.2. Sub-section Header 2</a>
+            <a href="#sub-section-1-header-2">1.2. Sub-section Header 2</a>
           </sl-tree-item>
         </sl-tree-item>
 
         <sl-tree-item expanded>
-          <a href="#section-header-2" onclick="closeSidebar()">2. Section Header 2</a>
+          <a href="#section-header-2">2. Section Header 2</a>
           <sl-tree-item>
-            <a href="#sub-section-2-header-1" onclick="closeSidebar()">2.1. Sub-section Header 1</a>
+            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
           </sl-tree-item>
           <sl-tree-item expanded>
-            <a href="#sub-section-2-header-2" onclick="closeSidebar()">2.2. Sub-section Header 2</a>
+            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
             <sl-tree-item>
-              <a href="#sub-sub-section-2-2-1" onclick="closeSidebar()">2.2.1. Sub-sub-section Header 1</a>
+              <a href="#sub-sub-section-2-2-1">2.2.1. Sub-sub-section Header 1</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#sub-sub-section-2-2-2" onclick="closeSidebar()">2.2.2. Sub-sub-section Header 2</a>
+              <a href="#sub-sub-section-2-2-2">2.2.2. Sub-sub-section Header 2</a>
             </sl-tree-item>
           </sl-tree-item>
           <sl-tree-item>
-            <a href="#sub-section-2-header-3" onclick="closeSidebar()">2.3. Sub-section Header 3</a>
+            <a href="#sub-section-2-header-3">2.3. Sub-section Header 3</a>
           </sl-tree-item>
         </sl-tree-item>
 
         <sl-tree-item>
-          <a href="#references" onclick="closeSidebar()">References</a>
+          <a href="#references">References</a>
         </sl-tree-item>
       </sl-tree>
     </div>
-  </sl-drawer>
+  </div>
 
   <div class="content">
-    <h1>Smart Test</h1>
+    <div id="title">
+      <image-component class="nus-logo" tag="nus-logo" source="assets/0-title/nus_logo.png"
+          subtitle=""></image-component> <!-- class is needed for CSS styling (sizing) -->
+      <h1>CDE4301 Innovation & Design Capstone</h1>
 
-    <!-- This is the team member component use to display details about your team members -->
-    <div class="team-member-wrapper">
-      <team-member profilepic="assets/members-picture/blackranger.png" name="Sammi Lee Ziyun" department="Environmental Engineering"
-        matricnumber="A0000000K"></team-member>
-      <team-member profilepic="assets/members-picture/yellowranger.png" name="Pearlyn Tan Tieng San" department="Chemical Engineering"
-        matricnumber="A1234567K"></team-member>
-      <team-member profilepic="assets/members-picture/redranger.png" name="Chua Tse Hui" department="Materials Science and Engineering"
-        matricnumber="A7654321K"></team-member>
+      <h1>AY2025/2026 Semester 1</h1>
+
+      <h1>IS-405: Smart Air-purifying Plant Tower (Indoor Air Purification)</h1>
+
+      <h1>Interim Report</h1>
+
+      <!-- This is the team member component use to display details about your team members -->
+      <div class="team-member-wrapper">
+        <team-member profilepic="assets/members-picture/blackranger.png" name="Sammi Lee Ziyun" department="Environmental Engineering"
+          matricnumber="A0000000K"></team-member>
+        <team-member profilepic="assets/members-picture/yellowranger.png" name="Pearlyn Tan Tieng San" department="Chemical Engineering"
+          matricnumber="A1234567K"></team-member>
+        <team-member profilepic="assets/members-picture/redranger.png" name="Chua Tse Hui" department="Materials Science and Engineering"
+          matricnumber="A7654321K"></team-member>
+      </div>
     </div>
-
     <!-- This is a divide from the shoelace library for aesthetic purpose -->
     <sl-divider></sl-divider>
 
@@ -244,13 +257,19 @@
 
   <script>
     function toggleSidebar() {
-      const drawer = document.getElementById('toc-drawer');
-      drawer.open ? drawer.hide() : drawer.show();
-    }
+      const sidebar = document.getElementById('toc-sidebar');
+      const content = document.querySelector('.content');
 
-    function closeSidebar() {
-      const drawer = document.getElementById('toc-drawer');
-      drawer.hide();
+      const icon = document.querySelector('.sidebar-toggle sl-icon');
+
+      sidebar.classList.toggle('hidden');
+      content.classList.toggle('full-width');
+      // Toggle icon between hamburger menu and X
+      if (sidebar.classList.contains('hidden')) {
+        icon.name = 'list';
+      } else {
+        icon.name = 'x-lg';
+      }
     }
   </script>
 

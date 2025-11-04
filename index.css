@@ -8,8 +8,14 @@ body {
 
 .content {
   max-width: 800px;
-  margin: auto;
-  padding: 10%;
+  margin-left: 350px;
+  padding: 20px 10% 10% 10%;
+  transition: margin-left 0.3s ease;
+}
+
+.content.full-width {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 p {
@@ -17,21 +23,88 @@ p {
   font-size: 1.1rem;
 }
 
+h1 {
+  text-align: center;
+}
+
 /* Sidebar toggle button */
 .sidebar-toggle {
   position: fixed;
   top: 20px;
   left: 20px;
+  z-index: 1000;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  padding: 80px 20px 20px 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
   z-index: 999;
 }
 
-/* Drawer (sidebar) width */
-.drawer-placement-start {
-  --size: 350px;
+.sidebar.hidden {
+  transform: translateX(-100%);
 }
 
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table of contents link styling */
+.sidebar a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.sidebar a:visited {
+  color: #000000;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.nus-logo {
+  --image-min-width: 45%;
+  --image-width: 60%;
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
-  .drawer-placement-start {
-    --size: 280px;
+  .sidebar {
+    width: 250px;
+  }
+  
+  .content {
+    margin-left: 0;
+    padding: 20px 5% 10% 5%;
+  }
+  
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar:not(.hidden) {
+    transform: translateX(0);
+  }
+  
+  .content.full-width {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .sidebar {
+    width: 70%;
   }
 }
