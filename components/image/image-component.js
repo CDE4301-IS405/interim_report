@@ -38,7 +38,8 @@ class ImageComponent extends HTMLElement {
       }
 
       img {
-        width: 100%;
+        width: var(--image-width, 100%);
+        min-width: var(--image-min-width, 100%);
       }
 
       sub {
