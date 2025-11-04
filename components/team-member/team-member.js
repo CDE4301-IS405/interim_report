@@ -1,6 +1,6 @@
 class TeamMember extends HTMLElement {
   static get observedAttributes() {
-    return ["avatar", "name", "department", "year"];
+    return ["profilepic", "name", "department", "matricnumber"]; // must be in small letters (no special characters)
   }
 
   constructor() {
@@ -19,10 +19,10 @@ class TeamMember extends HTMLElement {
   render() {
     const div = document.createElement("div");
     div.innerHTML = `
-    <img src="${this.avatar}" alt="${this.name}">
+    <img src="${this.profilepic}" alt="${this.name}">
     <p><strong>${this.name}</strong></p>
     <p>${this.department}</p>
-    <p>${this.year}</p>
+    <p>${this.matricnumber}</p>
     <style>
       :host {
         display: block;
