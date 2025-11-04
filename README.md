@@ -3,6 +3,7 @@
 ## Tools used
 - Grid.js for generating table
 - Shoelace for custom web-components
+- Claude Sonnet 4.5 (to generate code where needed)
 
 # Another Report Reference
 There's another report example given in the CDE4301 Course briefing on Canvas (Slide 28) that uses sidebar navigation for contents page which feels more readable. <br>
