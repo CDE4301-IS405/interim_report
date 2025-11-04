@@ -4,6 +4,7 @@ body {
   padding: 0;
   font-size: 18px;
   font-family: var(--sl-font-sans);
+  scroll-behavior: smooth;
 }
 
 .content {
