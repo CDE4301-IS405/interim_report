@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
   <script type="module"
     src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+  
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
   <link rel="stylesheet" href="./index.css">
 
@@ -29,6 +31,7 @@
   <script src="./components/scroll-to-top/scroll-to-top.js"></script>
 
   <script src="./components/table-component/table-component.js"></script>
+
 
   <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 </head>
@@ -389,18 +392,129 @@
       </div>
 
       <div id="sub-section-5-header-1">
-        <h3>5.1. Sub Section Header 1</h3>
-        <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
-          <image-component tag="imageTest" source="assets/5-trialTest/TVOC_plantAndSubtilis.png"
-          subtitle="Figure 5.1: Highest Change in TVOC over time in Plant + Bacillus Subtilis"></image-component>
-        </p>
+        <h3>5.1. Maximum TVOC Results</h3>
+        
+        <chart-component 
+          tag="tvoc-max-chart" 
+          subtitle="Figure 5.1: Highest Change in TVOC (ppb) - Comparison of Plant Types">
+        </chart-component>
+      </div>
+
+      <script type="module" src="./components/chart/chart-component.js"></script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Maximum TVOC Chart (recreating your first graph)
+          const tvocMaxChart = document.querySelector('chart-component[tag="tvoc-max-chart"]');
+          
+          if (tvocMaxChart) {
+            const plantTypes = ['Snake Plant', 'Money Plant', 'ZZ Plant', 'Dragon Plant'];
+            const plantOnly = [990, 760, 800, 1370];
+            const withBacillus = [270, 570, 800, 940];
+            const percentages = [-72, -26, 0, -42]; // Plant only reduction %
+            const percentagesBacillus = [-7.9, null, null, null]; // With Bacillus additional reduction
+
+            const trace1 = {
+              x: plantTypes,
+              y: plantOnly,
+              name: 'Plant only',
+              type: 'bar',
+              marker: {
+                color: '#b8ddb8',
+                line: { color: '#5a8a5a', width: 2 }
+              },
+              text: plantOnly.map((val, idx) => `~${val}<br>${percentages[idx]}%`),
+              textposition: 'outside',
+              textfont: { size: 12 }
+            };
+
+            const trace2 = {
+              x: plantTypes,
+              y: withBacillus,
+              name: 'With Bacillus Subtilis',
+              type: 'bar',
+              marker: {
+                color: '#6ba56b',
+                line: { color: '#3d6b3d', width: 2 }
+              },
+              text: withBacillus.map(val => `~${val}`),
+              textposition: 'inside',
+              textfont: { size: 12, color: 'white' }
+            };
+
+            const layout = {
+              title: 'Maximum TVOC',
+              xaxis: { title: '' },
+              yaxis: { 
+                title: 'Highest Change in TVOC (ppb)',
+                range: [0, 1500]
+              },
+              barmode: 'group',
+              plot_bgcolor: '#2d2d2d',
+              paper_bgcolor: '#2d2d2d',
+              font: { color: 'white' },
+              legend: {
+                x: 0.7,
+                y: 0.95,
+                bgcolor: 'rgba(0,0,0,0)'
+              },
+              margin: { t: 50, b: 80, l: 80, r: 50 }
+            };
+
+            tvocMaxChart.createChart([trace1, trace2], layout);
+          }
+
+          // Time to Steady State Chart (your second graph)
+          const timeChart = document.querySelector('chart-component[tag="time-steady-chart"]');
+          
+          if (timeChart) {
+            const trace3 = {
+              x: plantTypes,
+              y: [13, 7, 6, 5],
+              name: 'Plant only',
+              type: 'bar',
+              marker: { color: '#b8ddb8', line: { color: '#5a8a5a', width: 2 }},
+              text: ['~13<br>~69%', '~7<br>~47%', '~6<br>~42%', '~5<br>~23%'],
+              textposition: 'outside'
+            };
+
+            const trace4 = {
+              x: plantTypes,
+              y: [3.9, 3.7, 3.5, 3.7],
+              name: 'With Bacillus Subtilis',
+              type: 'bar',
+              marker: { color: '#6ba56b', line: { color: '#3d6b3d', width: 2 }},
+              text: ['~3.9', '~3.7', '~3.5', '~3.7'],
+              textposition: 'inside',
+              textfont: { color: 'white' }
+            };
+
+            const layout2 = {
+              title: 'Time taken to reach Steady State',
+              yaxis: { 
+                title: 'Time Taken to reach Steady State (h)',
+                range: [0, 15]
+              },
+              barmode: 'group',
+              plot_bgcolor: '#2d2d2d',
+              paper_bgcolor: '#2d2d2d',
+              font: { color: 'white' },
+              legend: { x: 0.7, y: 0.95, bgcolor: 'rgba(0,0,0,0)'}
+            };
+
+            timeChart.createChart([trace3, trace4], layout2);
+          }
+        });
+      </script>
+
+      <!-- Add another chart component for the second graph -->
+      <div id="sub-section-5-header-2">
+        <h3>5.2. Time to Steady State</h3>
+        
+        <chart-component 
+          tag="time-steady-chart" 
+          subtitle="Figure 5.2: Time Taken to Reach Steady State">
+        </chart-component>
       </div>
     </div>
 
