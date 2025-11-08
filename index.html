@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="./components/table-of-content/table-of-content.css">
 
   <script type="module" src="./components/image/image-component.js"></script>
+  <script type="module" src="./components/image/interactive-image.js"></script>
 
   <script type="module" src="./components/video/video.js"></script>
 
@@ -347,8 +348,41 @@
       <div id="sub-section-4-header-2">
         <h3>4.2. Experiemental Set-up Design</h3>
         <p>
-          teategagag
+          The experimental setup consists of several key components working together to measure air quality improvements.
         </p>
+
+        <!-- Interactive Image Component -->
+        <interactive-image 
+          tag="experimental-setup" 
+          source="assets/4-experimentalDesign/set-up1.jpeg"
+          subtitle="Figure 4.1: Experimental Setup Design - Click the + buttons to learn more">
+        </interactive-image>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const interactiveImg = document.querySelector('interactive-image[tag="experimental-setup"]');
+            
+            if (interactiveImg) {
+              // Add hotspots based on the actual image labels and arrow positions
+              
+              // Sensor - top left arrow pointing to the white sensor device
+              interactiveImg.addHotspot(30, 40, 'Sensor', 
+                'A high-precision air quality sensor that continuously monitors TVOC and CO2 levels inside the chamber. The sensor records data every 30 seconds to track real-time changes in air pollutant concentrations.');
+              
+              // Plant - center top arrow pointing to the plant in the container
+              interactiveImg.addHotspot(48, 50, 'Plant', 
+                'Snake plant (Sansevieria trifasciata) specimen potted in soil enriched with Bacillus Subtilis bacteria. The plant undergoes phytoremediation to absorb and break down volatile organic compounds from the surrounding air.');
+              
+              // Pollutant - right side arrow pointing to the white containers
+              interactiveImg.addHotspot(85, 52, 'Pollutant', 
+                'Controlled pollutant source containing volatile organic compounds (VOCs). This container releases a measured amount of pollutants into the sealed chamber to simulate indoor air quality conditions and test the plant\'s remediation capabilities.');
+              
+              // Airflow/Pump - bottom left arrow pointing to the pump system
+              interactiveImg.addHotspot(28, 72, 'Airflow System', 
+                'A low-speed circulation pump that ensures even distribution of air pollutants throughout the chamber. The controlled airflow maintains consistent environmental conditions and prevents stagnant air pockets that could affect measurement accuracy.');
+            }
+          });
+        </script>
       </div>
 
       <div id="sub-sub-section-4-2-1">
