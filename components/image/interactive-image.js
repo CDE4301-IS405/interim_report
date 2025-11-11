@@ -7,6 +7,7 @@ class InteractiveImage extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
     this.hotspots = [];
+    this.modals = [];
   }
 
   connectedCallback() {
@@ -20,8 +21,8 @@ class InteractiveImage extends HTMLElement {
     }
   }
 
-  addHotspot(x, y, title, description) {
-    this.hotspots.push({ x, y, title, description, isOpen: false });
+  addHotspot(x, y, title, content) {
+    this.hotspots.push({ x, y, title, content });
     this.render();
   }
 
@@ -41,21 +42,28 @@ class InteractiveImage extends HTMLElement {
                     data-index="${index}">
               <sl-icon name="plus-circle-fill"></sl-icon>
             </button>
-            <div class="hotspot-content ${hotspot.isOpen ? 'open' : ''}" 
-                 style="left: ${hotspot.x}%; top: ${hotspot.y + 5}%;"
-                 data-index="${index}">
-              <div class="hotspot-header">
-                <strong>${hotspot.title}</strong>
-                <button class="close-button" data-index="${index}">
-                  <sl-icon name="x"></sl-icon>
-                </button>
-              </div>
-              <p>${hotspot.description}</p>
-            </div>
           `).join('')}
         </div>
         <sub>${this.subtitle}</sub>
       </div>
+
+      <!-- Modals -->
+      ${this.hotspots.map((hotspot, index) => `
+        <div class="modal-overlay" id="modal-${index}" data-index="${index}">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2>${hotspot.title}</h2>
+              <button class="modal-close-button" data-index="${index}">
+                <sl-icon name="x-lg"></sl-icon>
+              </button>
+            </div>
+            <div class="modal-body">
+              ${hotspot.content}
+            </div>
+          </div>
+        </div>
+      `).join('')}
+
       <style>
         :host {
           display: block;
@@ -109,69 +117,117 @@ class InteractiveImage extends HTMLElement {
           color: white;
         }
 
-        .hotspot-content {
-          position: absolute;
-          background: white;
-          border: 2px solid #e5e7eb;
-          border-radius: 8px;
-          padding: 12px 16px;
-          min-width: 250px;
-          max-width: 350px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          z-index: 20;
+        /* Modal Styles */
+        .modal-overlay {
           display: none;
-          animation: fadeIn 0.3s ease;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.6);
+          z-index: 9999;
+          align-items: center;
+          justify-content: center;
+          animation: fadeIn 0.2s ease;
         }
 
-        .hotspot-content.open {
-          display: block;
+        .modal-overlay.open {
+          display: flex;
         }
 
-        .hotspot-header {
+        .modal-container {
+          background: white;
+          border-radius: 12px;
+          width: 90%;
+          max-width: 900px;
+          max-height: 85vh;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 8px;
-          gap: 8px;
+          padding: 20px 24px;
+          border-bottom: 1px solid #e5e7eb;
+          flex-shrink: 0;
         }
 
-        .hotspot-header strong {
+        .modal-header h2 {
+          margin: 0;
+          font-size: 1.5rem;
           color: #1f2937;
-          font-size: 14px;
         }
 
-        .close-button {
+        .modal-close-button {
           background: transparent;
           border: none;
           cursor: pointer;
-          padding: 0;
+          padding: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #6b7280;
-          transition: color 0.2s;
+          transition: all 0.2s;
+          border-radius: 4px;
         }
 
-        .close-button:hover {
+        .modal-close-button:hover {
+          background: #f3f4f6;
           color: #1f2937;
         }
 
-        .close-button sl-icon {
-          font-size: 18px;
+        .modal-close-button sl-icon {
+          font-size: 24px;
         }
 
-        .hotspot-content p {
-          margin: 0;
-          color: #4b5563;
-          font-size: 13px;
-          line-height: 1.5;
+        .modal-body {
+          padding: 24px;
+          overflow-y: auto;
+          flex: 1;
+          color: #374151;
+          line-height: 1.6;
+        }
+
+        .modal-body p {
+          margin: 0 0 1rem 0;
+          text-align: left;
+        }
+
+        .modal-body h3 {
+          margin: 1.5rem 0 0.75rem 0;
+          color: #1f2937;
+        }
+
+        .modal-body img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px;
+          margin: 1rem 0;
+        }
+
+        .modal-body ul, .modal-body ol {
+          margin: 0.5rem 0 1rem 1.5rem;
           text-align: left;
         }
 
         @keyframes fadeIn {
           from {
             opacity: 0;
-            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -188,10 +244,21 @@ class InteractiveImage extends HTMLElement {
         }
 
         @media (max-width: 768px) {
-          .hotspot-content {
-            min-width: 200px;
-            max-width: 280px;
-            font-size: 12px;
+          .modal-container {
+            width: 95%;
+            max-height: 90vh;
+          }
+
+          .modal-header {
+            padding: 16px;
+          }
+
+          .modal-header h2 {
+            font-size: 1.25rem;
+          }
+
+          .modal-body {
+            padding: 16px;
           }
 
           .hotspot-button {
@@ -209,36 +276,49 @@ class InteractiveImage extends HTMLElement {
     this.shadowRoot.innerHTML = '';
     this.shadowRoot.appendChild(div);
 
-    // Add event listeners
+    // Add event listeners for hotspot buttons
     this.shadowRoot.querySelectorAll('.hotspot-button').forEach(button => {
       button.addEventListener('click', (e) => {
         const index = parseInt(e.currentTarget.dataset.index);
-        this.toggleHotspot(index);
+        this.openModal(index);
       });
     });
 
-    this.shadowRoot.querySelectorAll('.close-button').forEach(button => {
+    // Add event listeners for modal close buttons
+    this.shadowRoot.querySelectorAll('.modal-close-button').forEach(button => {
       button.addEventListener('click', (e) => {
-        e.stopPropagation();
         const index = parseInt(e.currentTarget.dataset.index);
-        this.closeHotspot(index);
+        this.closeModal(index);
+      });
+    });
+
+    // Close modal when clicking overlay
+    this.shadowRoot.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          const index = parseInt(overlay.dataset.index);
+          this.closeModal(index);
+        }
       });
     });
   }
 
-  toggleHotspot(index) {
-    // Close all other hotspots
-    this.hotspots.forEach((hotspot, i) => {
-      if (i !== index) hotspot.isOpen = false;
-    });
-    // Toggle current hotspot
-    this.hotspots[index].isOpen = !this.hotspots[index].isOpen;
-    this.render();
+  openModal(index) {
+    const modal = this.shadowRoot.querySelector(`#modal-${index}`);
+    if (modal) {
+      modal.classList.add('open');
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
   }
 
-  closeHotspot(index) {
-    this.hotspots[index].isOpen = false;
-    this.render();
+  closeModal(index) {
+    const modal = this.shadowRoot.querySelector(`#modal-${index}`);
+    if (modal) {
+      modal.classList.remove('open');
+      // Restore body scroll
+      document.body.style.overflow = '';
+    }
   }
 }
 

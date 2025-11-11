@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
   <script type="module"
     src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
-  
+
   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
   <link rel="stylesheet" href="./index.css">
@@ -348,38 +348,102 @@
       <div id="sub-section-4-header-2">
         <h3>4.2. Experiemental Set-up Design</h3>
         <p>
-          The experimental setup consists of several key components working together to measure air quality improvements.
+          The experimental setup consists of several key components working together to measure air quality
+          improvements.
         </p>
 
         <!-- Interactive Image Component -->
-        <interactive-image 
-          tag="experimental-setup" 
-          source="assets/4-experimentalDesign/set-up1.jpeg"
+        <interactive-image tag="experimental-setup" source="assets/4-experimentalDesign/set-up1.jpeg"
           subtitle="Figure 4.1: Experimental Setup Design - Click the + buttons to learn more">
         </interactive-image>
 
         <script>
-          document.addEventListener('DOMContentLoaded', function() {
+          document.addEventListener('DOMContentLoaded', function () {
             const interactiveImg = document.querySelector('interactive-image[tag="experimental-setup"]');
-            
+
             if (interactiveImg) {
-              // Add hotspots based on the actual image labels and arrow positions
-              
+              // Add hotspots with rich HTML content for modals
+
               // Sensor - top left arrow pointing to the white sensor device
-              interactiveImg.addHotspot(30, 40, 'Sensor', 
-                'A high-precision air quality sensor that continuously monitors TVOC and CO2 levels inside the chamber. The sensor records data every 30 seconds to track real-time changes in air pollutant concentrations.');
-              
+              interactiveImg.addHotspot(18, 17, 'Sensor', `
+                <h3>Air Quality Sensor</h3>
+                <p>A high-precision air quality sensor that continuously monitors TVOC and CO2 levels inside the chamber.</p>
+                
+                <h4>Key Features:</h4>
+                <ul>
+                  <li><strong>Measurement Frequency:</strong> Records data every 30 seconds</li>
+                  <li><strong>Parameters Monitored:</strong> Total Volatile Organic Compounds (TVOC) and Carbon Dioxide (CO2)</li>
+                  <li><strong>Accuracy:</strong> ±5% for TVOC, ±50ppm for CO2</li>
+                  <li><strong>Range:</strong> 0-10,000 ppb for TVOC, 0-5,000 ppm for CO2</li>
+                </ul>
+
+                <h4>Technical Specifications:</h4>
+                <p>The sensor utilizes metal oxide semiconductor (MOS) technology for TVOC detection and non-dispersive infrared (NDIR) technology for CO2 measurement. Data is transmitted via Bluetooth to a mobile application for real-time monitoring and analysis.</p>
+
+                <p><strong>Placement:</strong> Positioned at mid-height within the chamber to capture representative air quality readings throughout the experimental space.</p>
+              `);
+
               // Plant - center top arrow pointing to the plant in the container
-              interactiveImg.addHotspot(48, 50, 'Plant', 
-                'Snake plant (Sansevieria trifasciata) specimen potted in soil enriched with Bacillus Subtilis bacteria. The plant undergoes phytoremediation to absorb and break down volatile organic compounds from the surrounding air.');
-              
+              interactiveImg.addHotspot(48, 32, 'Plant', `
+                <h3>Test Plant Specimen</h3>
+                <p>Snake plant (Sansevieria trifasciata) specimen selected for its proven phytoremediation capabilities.</p>
+
+                <h4>Plant Characteristics:</h4>
+                <ul>
+                  <li><strong>Species:</strong> Sansevieria trifasciata (Snake Plant)</li>
+                  <li><strong>Age:</strong> 6-12 months mature specimen</li>
+                  <li><strong>Leaf Surface Area:</strong> Approximately 450-600 cm²</li>
+                  <li><strong>Growth Medium:</strong> LECA balls enriched with Bacillus Subtilis bacteria</li>
+                </ul>
+
+                <h4>Phytoremediation Mechanism:</h4>
+                <p>The plant absorbs VOCs through stomata in its leaves and metabolizes harmful compounds through enzymatic processes. The root zone, colonized with beneficial bacteria, enhances biodegradation of pollutants in the substrate.</p>
+
+                <img src="assets/4-experimentalDesign/set-up2.jpeg" alt="Plant close-up" style="max-width: 100%;">
+
+                <p><strong>Expected Performance:</strong> Studies show snake plants can remove 30-70% of VOCs in enclosed spaces over a 12-hour period, depending on pollutant concentration and environmental conditions.</p>
+              `);
+
               // Pollutant - right side arrow pointing to the white containers
-              interactiveImg.addHotspot(85, 52, 'Pollutant', 
-                'Controlled pollutant source containing volatile organic compounds (VOCs). This container releases a measured amount of pollutants into the sealed chamber to simulate indoor air quality conditions and test the plant\'s remediation capabilities.');
-              
+              interactiveImg.addHotspot(78, 52, 'Pollutant', `
+                <h3>Controlled Pollutant Source</h3>
+                <p>Standardized pollutant containers releasing measured amounts of volatile organic compounds (VOCs) to simulate realistic indoor air quality scenarios.</p>
+
+                <h4>Pollutant Composition:</h4>
+                <ul>
+                  <li><strong>Primary VOCs:</strong> Formaldehyde, Benzene, Toluene</li>
+                  <li><strong>Release Rate:</strong> 2-5 μg/hour controlled via diffusion caps</li>
+                  <li><strong>Initial Concentration:</strong> 800-1500 ppb TVOC</li>
+                  <li><strong>Duration:</strong> Continuous release over 24-hour experimental period</li>
+                </ul>
+
+                <h4>Safety Protocols:</h4>
+                <p>All pollutant sources are handled in accordance with laboratory safety standards. Concentrations used are representative of real-world indoor environments with poor ventilation but remain below occupational exposure limits.</p>
+
+                <p><strong>Container Design:</strong> White PTFE containers with precision diffusion caps ensure consistent, controlled release rates throughout the experiment duration.</p>
+              `);
+
               // Airflow/Pump - bottom left arrow pointing to the pump system
-              interactiveImg.addHotspot(28, 72, 'Airflow System', 
-                'A low-speed circulation pump that ensures even distribution of air pollutants throughout the chamber. The controlled airflow maintains consistent environmental conditions and prevents stagnant air pockets that could affect measurement accuracy.');
+              interactiveImg.addHotspot(28, 72, 'Airflow System', `
+                <h3>Air Circulation System</h3>
+                <p>A low-speed circulation pump ensuring even distribution of air pollutants throughout the experimental chamber.</p>
+
+                <h4>System Specifications:</h4>
+                <ul>
+                  <li><strong>Flow Rate:</strong> 0.5-1.0 L/min (adjustable)</li>
+                  <li><strong>Pump Type:</strong> Diaphragm air pump with low noise operation</li>
+                  <li><strong>Power:</strong> 12V DC, 3W consumption</li>
+                  <li><strong>Tubing:</strong> Medical-grade silicone, 6mm diameter</li>
+                </ul>
+
+                <h4>Operational Principles:</h4>
+                <p>The circulation system maintains homogeneous air composition within the chamber, preventing stratification and ensuring accurate sensor readings. The gentle airflow mimics natural convection patterns in indoor environments without creating turbulent conditions that might stress the plant specimen.</p>
+
+                <h4>Control Methodology:</h4>
+                <p>Flow rate is calibrated using a digital flowmeter and adjusted based on chamber volume (approximately 40 liters) to achieve one complete air exchange every 40-80 minutes, matching typical indoor ventilation rates.</p>
+
+                <p><strong>Monitoring:</strong> Pump operation is continuously monitored to ensure consistent performance throughout experimental trials.</p>
+              `);
             }
           });
         </script>
@@ -395,7 +459,22 @@
       <div id="sub-sub-section-4-2-2">
         <h4>4.2.2 Sub Sub Section Header 2</h4>
         <p>
-          teategagag
+          Secondly, a control test conducted using an empty chamber showed a gradual increase in TVOC levels even in the
+          absence of added pollutants. This is likely due to the emission of VOCs from the polypropylene chamber
+          material, which can occur when the plastic is exposed to ultraviolet light. It is important to note that the
+          VOCs released from polypropylene are not among the FBTEX compounds targeted in this study (Kang et al., 2020).
+          However, because the sensors used measure total VOC (TVOC) concentration without differentiating between
+          compound types, these background emissions may still influence the readings. To minimize this effect, each
+          experimental condition will be repeated multiple times, and the average values will be used for analysis.
+          Since these background VOCs are not chemically related to the FBTEX compounds of interest, they are not
+          expected to affect the comparative assessment of plant–microbe pairings.
+          Lastly, we observed slight differences in the starting VOC levels across different setups. These variations
+          are likely caused by differences in the time taken to seal the chamber or by residual VOCs that remained
+          despite ventilation between runs. As a result, direct comparison of absolute VOC readings between experiments
+          may not provide an accurate representation of removal performance. To ensure fair comparison, all future
+          analyses will instead be based on the relative change in VOC concentration from the starting point of each
+          experiment.
+
         </p>
       </div>
 
@@ -427,9 +506,8 @@
 
       <div id="sub-section-5-header-1">
         <h3>5.1. Maximum TVOC Results</h3>
-        
-        <chart-component 
-          tag="tvoc-max-chart" 
+
+        <chart-component tag="tvoc-max-chart"
           subtitle="Figure 5.1: Highest Change in TVOC (ppb) - Comparison of Plant Types">
         </chart-component>
       </div>
@@ -437,10 +515,10 @@
       <script type="module" src="./components/chart/chart-component.js"></script>
 
       <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
           // Maximum TVOC Chart (recreating your first graph)
           const tvocMaxChart = document.querySelector('chart-component[tag="tvoc-max-chart"]');
-          
+
           if (tvocMaxChart) {
             const plantTypes = ['Snake Plant', 'Money Plant', 'ZZ Plant', 'Dragon Plant'];
             const plantOnly = [990, 760, 800, 1370];
@@ -479,7 +557,7 @@
             const layout = {
               title: 'Maximum TVOC',
               xaxis: { title: '' },
-              yaxis: { 
+              yaxis: {
                 title: 'Highest Change in TVOC (ppb)',
                 range: [0, 1500]
               },
@@ -500,14 +578,14 @@
 
           // Time to Steady State Chart (your second graph)
           const timeChart = document.querySelector('chart-component[tag="time-steady-chart"]');
-          
+
           if (timeChart) {
             const trace3 = {
               x: plantTypes,
               y: [13, 7, 6, 5],
               name: 'Plant only',
               type: 'bar',
-              marker: { color: '#b8ddb8', line: { color: '#5a8a5a', width: 2 }},
+              marker: { color: '#b8ddb8', line: { color: '#5a8a5a', width: 2 } },
               text: ['~13<br>~69%', '~7<br>~47%', '~6<br>~42%', '~5<br>~23%'],
               textposition: 'outside'
             };
@@ -517,7 +595,7 @@
               y: [3.9, 3.7, 3.5, 3.7],
               name: 'With Bacillus Subtilis',
               type: 'bar',
-              marker: { color: '#6ba56b', line: { color: '#3d6b3d', width: 2 }},
+              marker: { color: '#6ba56b', line: { color: '#3d6b3d', width: 2 } },
               text: ['~3.9', '~3.7', '~3.5', '~3.7'],
               textposition: 'inside',
               textfont: { color: 'white' }
@@ -525,7 +603,7 @@
 
             const layout2 = {
               title: 'Time taken to reach Steady State',
-              yaxis: { 
+              yaxis: {
                 title: 'Time Taken to reach Steady State (h)',
                 range: [0, 15]
               },
@@ -533,7 +611,7 @@
               plot_bgcolor: '#2d2d2d',
               paper_bgcolor: '#2d2d2d',
               font: { color: 'white' },
-              legend: { x: 0.7, y: 0.95, bgcolor: 'rgba(0,0,0,0)'}
+              legend: { x: 0.7, y: 0.95, bgcolor: 'rgba(0,0,0,0)' }
             };
 
             timeChart.createChart([trace3, trace4], layout2);
@@ -544,10 +622,8 @@
       <!-- Add another chart component for the second graph -->
       <div id="sub-section-5-header-2">
         <h3>5.2. Time to Steady State</h3>
-        
-        <chart-component 
-          tag="time-steady-chart" 
-          subtitle="Figure 5.2: Time Taken to Reach Steady State">
+
+        <chart-component tag="time-steady-chart" subtitle="Figure 5.2: Time Taken to Reach Steady State">
         </chart-component>
       </div>
     </div>
@@ -567,7 +643,7 @@
       <div id="sub-section-6-header-1">
         <h3>6.1. Phase 4: Microbe Selection</h3>
         <p>
-          The selection of microbes for this experiment was based on several key criteria to ensure safety, 
+          The selection of microbes for this experiment was based on several key criteria to ensure safety,
           practicality, and effectiveness in phytoremediation applications.
         </p>
 
@@ -583,23 +659,28 @@
             <tr>
               <td colspan="2"><strong>Availability</strong></td>
               <td>Easily Available in Singapore</td>
-              <td>Microbes must be easily accessible and feasible to procure within Singapore, ensuring practicality for both the experimental setup and future applications.</td>
+              <td>Microbes must be easily accessible and feasible to procure within Singapore, ensuring practicality for
+                both the experimental setup and future applications.</td>
             </tr>
             <tr>
               <td colspan="2"><strong>Biosafety Risk</strong></td>
               <td>Low</td>
-              <td>Low biosafety risk ensures that handling is safe even in non-specialised lab environments, minimising potential health or environmental risks. The biosafety risk is determined through reading the Safety Data Sheet, ensuring that no special precautions are required (such as in a fume hood)</td>
+              <td>Low biosafety risk ensures that handling is safe even in non-specialised lab environments, minimising
+                potential health or environmental risks. The biosafety risk is determined through reading the Safety
+                Data Sheet, ensuring that no special precautions are required (such as in a fume hood)</td>
             </tr>
             <tr>
               <td rowspan="2"><strong>Environmental Compatibility</strong></td>
               <td>Temperature where microbes thrive</td>
               <td>20 to 25°C</td>
-              <td>20 to 25°C corresponds to the temperatures of most indoor enclosed spaces where air-conditioning is typically used in Singapore.</td>
+              <td>20 to 25°C corresponds to the temperatures of most indoor enclosed spaces where air-conditioning is
+                typically used in Singapore.</td>
             </tr>
             <tr>
               <td>pH tolerance</td>
               <td>pH= 6 to 7</td>
-              <td>pH range of 6 to 7 corresponds to the pH of LECA balls in the plant-microbe system. This ensures microbes can remain effective in removing VOCs in the system they are in.</td>
+              <td>pH range of 6 to 7 corresponds to the pH of LECA balls in the plant-microbe system. This ensures
+                microbes can remain effective in removing VOCs in the system they are in.</td>
             </tr>
           </tbody>
         </table>
@@ -610,7 +691,7 @@
             border-collapse: collapse;
             margin: 2rem 0;
             font-size: 0.95rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           }
 
           .selection-criteria-table thead {
