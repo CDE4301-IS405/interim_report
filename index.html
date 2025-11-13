@@ -339,7 +339,7 @@
       <div id="sub-section-4-header-1">
         <h3>4.1. Preparation of Experimental Set Up</h3>
         <!-- Interactive Image Component -->
-        <interactive-image tag="experimental-setup" source="assets/4-Pilot Study/set-up1.jpeg"
+        <interactive-image tag="experimental-setup" source="assets/4-Pilot Study/set-up_actualD1.png"
           subtitle="Figure 4.1: Experimental Setup Design - Click the + buttons to learn more">
         </interactive-image>
 
@@ -350,9 +350,10 @@
             if (interactiveImg) {
               // Add hotspots with rich HTML content for modals
 
-              // Sensor - top left arrow pointing to the white sensor device
-              interactiveImg.addHotspot(18, 17, 'Sensor', `
-                <h3>Air Quality Sensor</h3>
+              // Sensor - top left arrow pointing down to the white sensor device
+              interactiveImg.addHotspot(35, 60, 'Sensor Calibration', `
+              <p>Content of this modal to be found in the Google doc interim report draft, section 4.1.3 Sensor Calibration. Below is just Dummy Write-up</p>
+                <h3>4.1.3 Sensor Calibration</h3>
                 <p>A high-precision air quality sensor that continuously monitors TVOC and CO2 levels inside the chamber.</p>
                 
                 <h4>Key Features:</h4>
@@ -369,9 +370,10 @@
                 <p><strong>Placement:</strong> Positioned at mid-height within the chamber to capture representative air quality readings throughout the experimental space.</p>
               `);
 
-              // Plant - center top arrow pointing to the plant in the container
-              interactiveImg.addHotspot(48, 32, 'Plant', `
-                <h3>Test Plant Specimen</h3>
+              // Plant - center arrow pointing down to the plant in the container
+              interactiveImg.addHotspot(50, 55, 'Plant Container and Airflow Design', `
+              <p>Content of this modal to be found in the Google doc interim report draft, section 4.1.2 Plant Container and Airflow Design. Below is just Dummy Write-up</p>
+                <h3>4.1.2 Plant Container and Airflow Design</h3>
                 <p>Snake plant (Sansevieria trifasciata) specimen selected for its proven phytoremediation capabilities.</p>
 
                 <h4>Plant Characteristics:</h4>
@@ -384,34 +386,22 @@
 
                 <h4>Phytoremediation Mechanism:</h4>
                 <p>The plant absorbs VOCs through stomata in its leaves and metabolizes harmful compounds through enzymatic processes. The root zone, colonized with beneficial bacteria, enhances biodegradation of pollutants in the substrate.</p>
-
-                <img src="assets/4-experimentalDesign/set-up2.jpeg" alt="Plant close-up" style="max-width: 100%;">
-
                 <p><strong>Expected Performance:</strong> Studies show snake plants can remove 30-70% of VOCs in enclosed spaces over a 12-hour period, depending on pollutant concentration and environmental conditions.</p>
               `);
 
-              // Pollutant - right side arrow pointing to the white containers
-              interactiveImg.addHotspot(78, 52, 'Pollutant', `
-                <h3>Controlled Pollutant Source</h3>
-                <p>Standardized pollutant containers releasing measured amounts of volatile organic compounds (VOCs) to simulate realistic indoor air quality scenarios.</p>
-
-                <h4>Pollutant Composition:</h4>
-                <ul>
-                  <li><strong>Primary VOCs:</strong> Formaldehyde, Benzene, Toluene</li>
-                  <li><strong>Release Rate:</strong> 2-5 μg/hour controlled via diffusion caps</li>
-                  <li><strong>Initial Concentration:</strong> 800-1500 ppb TVOC</li>
-                  <li><strong>Duration:</strong> Continuous release over 24-hour experimental period</li>
-                </ul>
-
-                <h4>Safety Protocols:</h4>
-                <p>All pollutant sources are handled in accordance with laboratory safety standards. Concentrations used are representative of real-world indoor environments with poor ventilation but remain below occupational exposure limits.</p>
-
-                <p><strong>Container Design:</strong> White PTFE containers with precision diffusion caps ensure consistent, controlled release rates throughout the experiment duration.</p>
+              // Pollutant - right side arrow pointing down to the white containers
+              interactiveImg.addHotspot(70, 80, 'Pollutant Preparation and Dosing', `
+                <h3>Pollutant Preparation and Dosing</h3>
+                <p>The pollutant strategy was designed to ensure comprehensive coverage of common indoor air hazards, specifically focusing on the five target VOCs: Formaldehyde, Benzene, Toluene, Ethylbenzene, and Xylene (FBTEX). Three pollutant sources were selected for the pilot study: Elmer’s White Glue, Aureo’s Liquid Shoe Polish, and Nippon Vinilex‑5000 water-based paint. The specific VOC composition and approximate concentration of each source are summarized in Table X.</p>
+<p>Elmer’s White Glue was selected as a primary pollutant source because it contains all five target VOCs, enabling simultaneous assessment of multiple compounds within a single material. However, its high viscosity restricts solvent mobility and diffusion, leading to slower VOC evaporation rates. Such behaviour is typical of viscous polymeric coatings and adhesives, where internal mass transfer resistance limits emission flux (Munekata et al., 2013). If only white glue were used, the slower VOC emission would likely prolong the time required for concentrations in the chamber to reach a plateau, potentially delaying the observation of measurable VOC removal by the plant and plant–microbe setups. To address this limitation and ensure sufficient VOC exposure during the experimental period, additional pollutant sources with differing physical properties were incorporated.<br><br>Aureo’s Liquid Shoe Polish was incorporated as a complementary VOC source due to its low viscosity, which facilitates more rapid evaporation compared with white glue. This characteristic ensures that the chamber reaches measurable VOC concentrations more quickly, enabling timely observation of VOC removal by the plant and plant–microbe setups. In addition, the shoe polish provides a concentrated source of Toluene, Ethylbenzene, and Xylene, broadening the spectrum of VOCs present and reflecting the diverse chemical profile commonly found in indoor environments.<br><br>Nippon Vinilex‑5000 water-based paint was added to supplement the Formaldehyde content, which is released more slowly from high-viscosity white glue. Even though it is a low-VOC formulation, paint contributes an additional, readily available source of Formaldehyde, helping to balance the relative concentrations of all five target VOCs in the chamber. The inclusion of paint also strengthens the experimental design by preventing reliance on a single pollutant type, reducing potential bias due to the physical and chemical properties unique to one material. This approach ensures that the experimental conditions more accurately mimic real-world indoor settings, where VOCs originate from multiple sources such as adhesives, paints, and personal care products.<br><br>Using reference experimental setups from Natede et al. (2023), a preliminary calculation was performed to estimate the target mass of VOCs required for the experimental chamber (see Appendix 1). Based on this value, the required volume of each pollutant was determined using Microsoft Excel’s Solver function to ensure that the total VOC mass matched the calculated target. The resulting volumes for each pollutant are summarized in Table X.<br><br>
+                </p>
+                <p>Rest of the content found in the Google doc interim report draft, section 4.1.1 Pollutant Preparation and Dosing</p>
               `);
 
-              // Airflow/Pump - bottom left arrow pointing to the pump system
-              interactiveImg.addHotspot(28, 72, 'Airflow System', `
-                <h3>Air Circulation System</h3>
+              // Airflow/Pump - left side arrow pointing down to the pump system
+              interactiveImg.addHotspot(30, 68, 'Chamber Modification', `
+              <p>Content of this modal to be found in the Google doc interim report draft, section 4.1.4 Chamber Modification. Below is just Dummy Write-up</p>  
+              <h3>Air Circulation System</h3>
                 <p>A low-speed circulation pump ensuring even distribution of air pollutants throughout the experimental chamber.</p>
 
                 <h4>System Specifications:</h4>
