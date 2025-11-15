@@ -100,14 +100,39 @@
 
         <sl-tree-item expanded>
           <a href="#4. Phase 2: Pilot Study">4. Phase 2: Pilot Study (Pearlyn)</a>
-          <sl-tree-item>
+        
+          <sl-tree-item expanded>
             <a href="#4.1 Preparation of Experimental Set up">4.1. Preparation of Experimental Set up</a>
+        
+            <sl-tree-item>
+              <a href="#4.1.1 Pollutant Preparation and Dosing">4.1.1 Pollutant Preparation and Dosing</a>
+            </sl-tree-item>
+        
+            <sl-tree-item>
+              <a href="#4.1.2 Plant Container and Airflow Design">4.1.2 Plant Container and Airflow Design</a>
+            </sl-tree-item>
+        
+            <sl-tree-item>
+              <a href="#4.1.3 Sensor Calibration">4.1.3 Sensor Calibration</a>
+            </sl-tree-item>
+        
+            <sl-tree-item>
+              <a href="#4.1.4 Chamber Modification">4.1.4 Chamber Modification</a>
+            </sl-tree-item>
+        
+            <sl-tree-item>
+              <a href="#4.1.5 Final Experimental Setup">4.1.5 Final Experimental Setup</a>
+            </sl-tree-item>
+        
           </sl-tree-item>
+        
           <sl-tree-item>
             <a href="#4.2. Results and Discussions">4.2. Results and Discussions</a>
           </sl-tree-item>
+        
           <sl-tree-item>
-            <a href="#4.3. Experimental Improvements and Methodology Refinement">4.3. Experimental Improvements and Methodology Refinement </a>
+            <a href="#4.3. Experimental Improvements and Methodology Refinement">4.3. Experimental Improvements and Methodology
+              Refinement</a>
           </sl-tree-item>
         </sl-tree-item>
 
@@ -365,13 +390,13 @@
         <h3>2.2. Project Phases</h3>
         <p>
           To systematically address the research question, the study was structured into 5 sequential phases, as illustrated in
-          Figure 6. Each phase builds upon the findings of the previous one to progressively narrow down the most effective
+          Figure 7. Each phase builds upon the findings of the previous one to progressively narrow down the most effective
           plant–microbe pairing for VOC removal. The overall research framework integrates plant screening, pilot testing, proof
           of concept validation, microbial identification, and final pairing evaluation to ensure a comprehensive and
           evidence-based approach.
         </p>
         <image-component tag="image" source="assets/2-Project Overview/Project Phases.png"
-          subtitle="Figure 6: Overview of the 5 Phases of the Research Methodology."></image-component>
+          subtitle="Figure 7: Overview of the 5 Phases of the Research Methodology."></image-component>
     </div>
     <br />
     <br />
@@ -398,10 +423,10 @@
           Following this performance-based screening, the remaining candidates were further evaluated according to a defined set
           of selection criteria — availability, suitability to Singapore’s indoor climate, and ease of maintenance. These criteria
           ensure that the shortlisted species are not only effective in VOC removal but also practical and sustainable for
-          long-term indoor application. The following diagram (Figure 7) summarizes this selection framework.
+          long-term indoor application. The following diagram (Figure 8) summarizes this selection framework.
         </p>
           <image-component tag="image" source="assets/3-Plant Selection/Plant Selection Criteria.png"
-            subtitle="Figure 6: Hierarchy of the Selection Criteria for suitable plant species."></image-component>
+            subtitle="Figure 8: Hierarchy of the Selection Criteria for suitable plant species."></image-component>
         </p>
         This multi-stage selection process ensured that the final list of candidate plants not only demonstrated scientific
         potential for VOC removal, but also satisfied practical considerations for real-world implementation in residential and
@@ -412,7 +437,7 @@
         Plant), <i>Zamioculcas zamiifolia</i> (ZZ Plant), and <i> Dracaena fragrans</i> (Dragon Plant).
         </p>
           <image-component tag="image" source="assets/3-Plant Selection/Shortlisted Plants.png"
-            subtitle="Figure 8: Photos of Shortlisted Plant Species."></image-component>
+            subtitle="Figure 9: Photos of Shortlisted Plant Species."></image-component>
         </p>
           The selection of these species was guided by two primary considerations. First, consistent VOC removal performance —
           these plants were repeatedly identified in both scientific literature and commercial reports as effective species for
@@ -450,7 +475,7 @@
         </p>
         By achieving these objectives, the pilot study generates critical insights that inform subsequent refinements to the
         experimental setup and strengthen the reliability of data analysis in later phases. The pilot study adopts a cyclical
-        experimental framework (Figure 9), beginning with the definition of key parameters such as pollutant dosage. Experiments
+        experimental framework (Figure 10), beginning with the definition of key parameters such as pollutant dosage. Experiments
         are then conducted and systematically evaluated to identify gaps, inconsistencies, or methodological limitations. Based
         on these observations, necessary adjustments are implemented, and the process is repeated until optimal experimental
         conditions are established — where pollutant concentrations fall within the sensor’s detection range while remaining
@@ -459,7 +484,7 @@
         <div style="display:flex; justify-content:center;">
           <image-component tag="image"
           source="assets/4-Pilot Study/Pilot study cycle.png"
-          subtitle="Figure 9: Pilot Study Experimental Framework."
+          subtitle="Figure 10: Pilot Study Experimental Framework."
           style="max-width:650px;">
         </image-component>
         </p>  
@@ -468,97 +493,543 @@
       <div id="4.1 Preparation of Experimental Set up">
         <h3>4.1. Preparation of Experimental Set Up</h3>
         <p>
-          Before initiating the pilot study experiments, it was essential to carefully prepare each component of the experimental
-          setup to ensure consistency, reliability, and reproducibility of results. The preparation process includes multiple
-          elements: the chamber, plant containers, sensors, and pollutant sources. Detailed protocols for each component have been
-          documented to maintain standardized conditions across all experimental runs. Click on a component to view the
-          corresponding setup procedure, materials, and considerations.
+          Before initiating the pilot study experiments, it was essential to prepare each component of the experimental setup with
+          clarity and intention. Each aspect of the system—such as the chamber, plant containers, sensors, and pollutant
+          sources—was designed around specific guiding questions to ensure consistency, reliability, and reproducibility. Click on
+          the corresponding buttons to explore the key design questions we aimed to answer for each component and how these
+          considerations shaped the final setup.
         </p>
-        <!-- Interactive Image Component -->
-        <interactive-image tag="experimental-setup" source="assets/4-Pilot Study/set-up_actualD1.png"
-          subtitle="Figure 10: Experimental Setup Design - Click the + buttons to learn more">
-        </interactive-image>
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const interactiveImg = document.querySelector('interactive-image[tag="experimental-setup"]');
-
-            if (interactiveImg) {
-              // Add hotspots with rich HTML content for modals
-
-              // Sensor - top left arrow pointing down to the white sensor device
-              interactiveImg.addHotspot(35, 60, 'Sensor Calibration', `
-              <p>Content of this modal to be found in the Google doc interim report draft, section 4.1.3 Sensor Calibration. Below is just Dummy Write-up</p>
-                <h3>4.1.3 Sensor Calibration</h3>
-                <p>A high-precision air quality sensor that continuously monitors TVOC and CO2 levels inside the chamber.</p>
-                
-                <h4>Key Features:</h4>
-                <ul>
-                  <li><strong>Measurement Frequency:</strong> Records data every 30 seconds</li>
-                  <li><strong>Parameters Monitored:</strong> Total Volatile Organic Compounds (TVOC) and Carbon Dioxide (CO2)</li>
-                  <li><strong>Accuracy:</strong> ±5% for TVOC, ±50ppm for CO2</li>
-                  <li><strong>Range:</strong> 0-10,000 ppb for TVOC, 0-5,000 ppm for CO2</li>
-                </ul>
-
-                <h4>Technical Specifications:</h4>
-                <p>The sensor utilizes metal oxide semiconductor (MOS) technology for TVOC detection and non-dispersive infrared (NDIR) technology for CO2 measurement. Data is transmitted via Bluetooth to a mobile application for real-time monitoring and analysis.</p>
-
-                <p><strong>Placement:</strong> Positioned at mid-height within the chamber to capture representative air quality readings throughout the experimental space.</p>
-              `);
-
-              // Plant - center arrow pointing down to the plant in the container
-              interactiveImg.addHotspot(50, 55, 'Plant Container and Airflow Design', `
-              <p>Content of this modal to be found in the Google doc interim report draft, section 4.1.2 Plant Container and Airflow Design. Below is just Dummy Write-up</p>
-                <h3>4.1.2 Plant Container and Airflow Design</h3>
-                <p>Snake plant (Sansevieria trifasciata) specimen selected for its proven phytoremediation capabilities.</p>
-
-                <h4>Plant Characteristics:</h4>
-                <ul>
-                  <li><strong>Species:</strong> Sansevieria trifasciata (Snake Plant)</li>
-                  <li><strong>Age:</strong> 6-12 months mature specimen</li>
-                  <li><strong>Leaf Surface Area:</strong> Approximately 450-600 cm²</li>
-                  <li><strong>Growth Medium:</strong> LECA balls enriched with Bacillus Subtilis bacteria</li>
-                </ul>
-
-                <h4>Phytoremediation Mechanism:</h4>
-                <p>The plant absorbs VOCs through stomata in its leaves and metabolizes harmful compounds through enzymatic processes. The root zone, colonized with beneficial bacteria, enhances biodegradation of pollutants in the substrate.</p>
-                <p><strong>Expected Performance:</strong> Studies show snake plants can remove 30-70% of VOCs in enclosed spaces over a 12-hour period, depending on pollutant concentration and environmental conditions.</p>
-              `);
-
-              // Pollutant - right side arrow pointing down to the white containers
-              interactiveImg.addHotspot(70, 80, 'Pollutant Preparation and Dosing', `
-                <h3>Pollutant Preparation and Dosing</h3>
-                <p>The pollutant strategy was designed to ensure comprehensive coverage of common indoor air hazards, specifically focusing on the five target VOCs: Formaldehyde, Benzene, Toluene, Ethylbenzene, and Xylene (FBTEX). Three pollutant sources were selected for the pilot study: Elmer’s White Glue, Aureo’s Liquid Shoe Polish, and Nippon Vinilex‑5000 water-based paint. The specific VOC composition and approximate concentration of each source are summarized in Table X.</p>
-<p>Elmer’s White Glue was selected as a primary pollutant source because it contains all five target VOCs, enabling simultaneous assessment of multiple compounds within a single material. However, its high viscosity restricts solvent mobility and diffusion, leading to slower VOC evaporation rates. Such behaviour is typical of viscous polymeric coatings and adhesives, where internal mass transfer resistance limits emission flux (Munekata et al., 2013). If only white glue were used, the slower VOC emission would likely prolong the time required for concentrations in the chamber to reach a plateau, potentially delaying the observation of measurable VOC removal by the plant and plant–microbe setups. To address this limitation and ensure sufficient VOC exposure during the experimental period, additional pollutant sources with differing physical properties were incorporated.<br><br>Aureo’s Liquid Shoe Polish was incorporated as a complementary VOC source due to its low viscosity, which facilitates more rapid evaporation compared with white glue. This characteristic ensures that the chamber reaches measurable VOC concentrations more quickly, enabling timely observation of VOC removal by the plant and plant–microbe setups. In addition, the shoe polish provides a concentrated source of Toluene, Ethylbenzene, and Xylene, broadening the spectrum of VOCs present and reflecting the diverse chemical profile commonly found in indoor environments.<br><br>Nippon Vinilex‑5000 water-based paint was added to supplement the Formaldehyde content, which is released more slowly from high-viscosity white glue. Even though it is a low-VOC formulation, paint contributes an additional, readily available source of Formaldehyde, helping to balance the relative concentrations of all five target VOCs in the chamber. The inclusion of paint also strengthens the experimental design by preventing reliance on a single pollutant type, reducing potential bias due to the physical and chemical properties unique to one material. This approach ensures that the experimental conditions more accurately mimic real-world indoor settings, where VOCs originate from multiple sources such as adhesives, paints, and personal care products.<br><br>Using reference experimental setups from Natede et al. (2023), a preliminary calculation was performed to estimate the target mass of VOCs required for the experimental chamber (see Appendix 1). Based on this value, the required volume of each pollutant was determined using Microsoft Excel’s Solver function to ensure that the total VOC mass matched the calculated target. The resulting volumes for each pollutant are summarized in Table X.<br><br>
-                </p>
-                <p>Rest of the content found in the Google doc interim report draft, section 4.1.1 Pollutant Preparation and Dosing</p>
-              `);
-
-              // Airflow/Pump - left side arrow pointing down to the pump system
-              interactiveImg.addHotspot(30, 68, 'Chamber Modification', `
-              <p>Content of this modal to be found in the Google doc interim report draft, section 4.1.4 Chamber Modification. Below is just Dummy Write-up</p>  
-              <h3>Air Circulation System</h3>
-                <p>A low-speed circulation pump ensuring even distribution of air pollutants throughout the experimental chamber.</p>
-
-                <h4>System Specifications:</h4>
-                <ul>
-                  <li><strong>Flow Rate:</strong> 0.5-1.0 L/min (adjustable)</li>
-                  <li><strong>Pump Type:</strong> Diaphragm air pump with low noise operation</li>
-                  <li><strong>Power:</strong> 12V DC, 3W consumption</li>
-                  <li><strong>Tubing:</strong> Medical-grade silicone, 6mm diameter</li>
-                </ul>
-
-                <h4>Operational Principles:</h4>
-                <p>The circulation system maintains homogeneous air composition within the chamber, preventing stratification and ensuring accurate sensor readings. The gentle airflow mimics natural convection patterns in indoor environments without creating turbulent conditions that might stress the plant specimen.</p>
-
-                <h4>Control Methodology:</h4>
-                <p>Flow rate is calibrated using a digital flowmeter and adjusted based on chamber volume (approximately 40 liters) to achieve one complete air exchange every 40-80 minutes, matching typical indoor ventilation rates.</p>
-
-                <p><strong>Monitoring:</strong> Pump operation is continuously monitored to ensure consistent performance throughout experimental trials.</p>
-              `);
+        <!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Experimental Setup Design</title>
+          <style>
+            /* General styling for the container */
+            .setup-container {
+              position: relative;
+              width: 800px;
+              /* Adjust as needed */
+              margin: 20px auto;
+              max-width: 95%;
             }
-          });
-        </script>
+        
+            /* Style for the setup image */
+            .setup-image {
+              width: 100%;
+              height: auto;
+              display: block;
+            }
+        
+            /* Style for the clickable '+' button/hotspot */
+            .hotspot-button {
+              position: absolute;
+              background-color: #007bff;
+              color: white;
+              border: 2px solid white;
+              border-radius: 50%;
+              width: 25px;
+              height: 25px;
+              text-align: center;
+              line-height: 21px;
+              font-size: 18px;
+              font-weight: bold;
+              cursor: pointer;
+              z-index: 10;
+              /* Above the image */
+              transition: background-color 0.2s;
+            }
+        
+            .hotspot-button:hover {
+              background-color: #0056b3;
+            }
+        
+            /* Style for the info popup box */
+            .info-popup {
+              position: absolute;
+              background-color: rgb(250, 219, 187);
+              border: 1px solid #ccc;
+              padding: 10px;
+              border-radius: 5px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              width: 250px;
+              z-index: 11;
+              display: none;
+              /* Initially hidden */
+            }
+        
+            .info-popup h4 {
+              margin-top: 0;
+              color: #333;
+            }
+        
+            /* Positioning the buttons and popups based on the video image */
+            /* Note: Positioning is approximate and based on visual estimation of the video frame */
+        
+            /* Sensor Hotspots */
+            #pollutant-btn {
+              top: 53%;
+              left: 22%;
+            }
+        
+            /* Plant Hotspot */
+            #plant-btn {
+              top: 53%;
+              left: 55%;
+            }
+        
+            /* Pollutant Hotspots */
+            #sensor-btn {
+              top: 30%;
+              left: 94%;
+            }
+
+            /* Container Hotspots */
+            #container-btn {
+              top: 2%;
+              left: 18%;
+            }
+        
+            /* Positioning the popups relative to their buttons (adjusting left/right based on screen side) */
+            #pollutant-info {
+              top: 18%;
+              left: 27%;
+            }
+
+            #plant-info {
+              top: 20%;
+              left: 0%;
+            }
+        
+            #sensor-info {
+              top: 30%;
+              left: 80%;
+            }
+
+            #container-info {
+              top: 2%;
+              left: 25%;
+            }
+        
+            /* Adjusted to be on the right side */
+        
+            /* Sensor info popups will appear off-screen in the video, but for this demo, let's place one near the plant */
+            /* To simulate the click behavior shown in the video, I'll only add the popups for the Plant and Pollutant */
+          </style>
+        </head>
+        
+        <body>
+        
+          <div class="setup-container">
+            <img src="assets/4-Pilot Study/drawn experiment set up.png" alt="Experimental Setup Design"
+              style="width: 100%; height: auto; display: block;">
+            
+            <p style="text-align: center; font-style: italic; margin-top: 5px;">
+              Figure 11: Overview of Experimental Setup Components and Design Considerations - Click the + buttons to learn more
+            </p>
+        
+            <button class="hotspot-button" id="sensor-btn" onclick="togglePopup('sensor-info')">+</button>
+            
+            <button class="hotspot-button" id="plant-btn" onclick="togglePopup('plant-info')">+</button>
+        
+            <button class="hotspot-button" id="pollutant-btn" onclick="togglePopup('pollutant-info')">+</button>
+            
+            <button class="hotspot-button" id="container-btn" onclick="togglePopup('container-info')">+</button>
+            
+            <div class="info-popup" id="plant-info">
+              <h4>Plant Container</h4>
+              <p>Snake plant (<em>Sansevieria trifasciata</em>) specimen potted in soil enriched with <em>Bacillus Subtilis</em>
+                bacteria. The plant undergoes phytoremediation to absorb and break down volatile organic compounds from the
+                surrounding air.</p>
+            </div>
+        
+            <div class="info-popup" id="pollutant-info">
+              <h4>Pollutant Source</h4>
+              <p>Controlled pollutant source releases a measured amount of volatile organic compounds (VOCs) into the sealed
+                container to simulate indoor air quality issues and test the plant's remediation effectiveness.</p>
+            </div>
+        
+            <div class="info-popup" id="sensor-info" style="top: 25%; left: 20%;">
+              <h4>Sensor</h4>
+              <p>Air quality sensor (Greenberry) used to continuously monitor the concentration of key VOCs and
+                temperature/humidity within the chamber.</p>
+            </div>
+        
+            <div class="info-popup" id="container-info" style="top: 25%; left: 20%;">
+              <h4>Chamber</h4>
+              <p>Air quality sensor (Greenberry) used to continuously monitor the concentration of key VOCs and
+                temperature/humidity within the chamber.</p>
+            </div>
+          </div>
+        
+          <script>
+            /**
+             * Toggles the display of an info popup box.
+             * @param {string} popupId - The ID of the info popup element to toggle.
+             */
+            function togglePopup(popupId) {
+              const popup = document.getElementById(popupId);
+
+              // Hide all other popups
+              document.querySelectorAll('.info-popup').forEach(p => {
+                if (p.id !== popupId) {
+                  p.style.display = 'none';
+                }
+              });
+
+              // Toggle the target popup
+              if (popup.style.display === 'block') {
+                popup.style.display = 'none';
+              } else {
+                popup.style.display = 'block';
+              }
+            }
+          </script>
+        </body>  
+        </html>
+      </div>
+
+      <div id="4.1.1 Pollutant Preparation and Dosing">
+        <h3>4.1.1 Pollutant Preparation and Dosing</h3>
+      <p>
+        The pollutant strategy was designed to ensure comprehensive coverage of common indoor air hazards, specifically focusing
+        on the five target VOCs: FBTEX. Three pollutant sources were selected for the pilot study: Elmer’s White Glue, Aureo’s
+        Liquid Shoe Polish, and Nippon Vinilex‑5000 water-based paint. The specific VOC composition and approximate
+        concentration of each source are summarized in Table 1.
+      </p>
+      <table class="pollutant-data-table">
+        <caption>Table 1: Composition and Characteristics of Pollutant Sources Used in the Pilot Study</caption>
+        <thead>
+          <tr>
+            <th>Pollutant</th>
+            <th>Type / Category</th>
+            <th>VOC</th>
+            <th>VOC (% by weight)</th>
+            <th>Viscosity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elmer's White Glue</td>
+            <td>General-purpose adhesive (PVA)</td>
+            <td>
+              <ul>
+                <li>Formaldehyde</li>
+                <li>Benzene</li>
+                <li>Toluene</li>
+                <li>Ethylbenzene</li>
+                <li>Xylene (Lim et. al, 2014)</li>
+              </ul>
+            </td>
+            <td>&lt;1–10% (Administrative code, n.d)</td>
+            <td>2.311 Pa·s (Roger, 2025)</td>
+          </tr>
+          <tr>
+            <td>Aureo's Liquid Shoe Polish</td>
+            <td>Liquid form</td>
+            <td>
+              <ul>
+                <li>Toluene</li>
+                <li>Ethylbenzene</li>
+                <li>Xylene (Lim et. al, 2014)</li>
+              </ul>
+            </td>
+            <td>15% (Administrative code, n.d)</td>
+            <td>~ 0.2389 Pa·s (Akinbomi et. al, 2022)</td>
+          </tr>
+          <tr>
+            <td>Nippon Vinilex-5000 Paint</td>
+            <td>Water-based wall paint</td>
+            <td>
+              <ul>
+                <li>Formaldehyde (Lim et. al, 2014)</li>
+              </ul>
+            </td>
+            <td>&lt;2% (low-VOC) (Administrative code, n.d)</td>
+            <td>0.648 to 0.700 Pa·s (Nippon Paint (S) Co. Pte Ltd, 2024)</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <style>
+        .pollutant-data-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .pollutant-data-table thead {
+          /* Used a blue color similar to the image */
+          background-color: #b8d4f1;
+        }
+      
+        .pollutant-data-table th {
+          padding: 12px;
+          text-align: left;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+        }
+      
+        .pollutant-data-table tbody tr {
+          background-color: #ffffff;
+        }
+      
+        .pollutant-data-table tbody tr:nth-child(odd) {
+          background-color: #f8f9fa;
+        }
+      
+        .pollutant-data-table td {
+          padding: 12px;
+          border: 1px solid #2c3e50;
+          vertical-align: top;
+        }
+      
+        /* Styling for the VOC lists to ensure they look clean */
+        .pollutant-data-table td ul {
+          list-style-type: none;
+          padding-left: 0;
+          margin: 0;
+        }
+      
+        .pollutant-data-table td ul li {
+          margin: 0;
+          padding: 0;
+        }
+      
+        @media (max-width: 768px) {
+          .pollutant-data-table {
+            font-size: 0.85rem;
+          }
+      
+          .pollutant-data-table th,
+          .pollutant-data-table td {
+            padding: 8px;
+          }
+        }
+      </style>
+      <p>
+        Elmer’s White Glue was selected as a primary pollutant source because it contains all five target VOCs, enabling
+        simultaneous assessment of multiple compounds within a single material. However, its high viscosity restricts solvent
+        mobility and diffusion, leading to slower VOC evaporation rates. Such behaviour is typical of viscous polymeric coatings
+        and adhesives, where internal mass transfer resistance limits emission flux (Munekata et al., 2013). If only white glue
+        were used, the slower VOC emission would likely prolong the time required for concentrations in the chamber to reach a
+        plateau, potentially delaying the observation of measurable VOC removal by the plant and plant–microbe setups. To
+        address this limitation and ensure sufficient VOC exposure during the experimental period, additional pollutant sources
+        with differing physical properties were incorporated.
+      </p>
+      <p> 
+        Aureo’s Liquid Shoe Polish was incorporated as a complementary VOC source due to its low viscosity, which facilitates
+        more rapid evaporation compared with white glue. This characteristic ensures that the chamber reaches measurable VOC
+        concentrations more quickly, enabling timely observation of VOC removal by the plant and plant–microbe setups. In
+        addition, the shoe polish provides a concentrated source of Toluene, Ethylbenzene, and Xylene, broadening the spectrum
+        of VOCs present and reflecting the diverse chemical profile commonly found in indoor environments.
+      </p>
+      <p>
+        Nippon Vinilex‑5000 water-based paint was added to supplement the Formaldehyde content, which is released more slowly
+        from high-viscosity white glue. Even though it is a low-VOC formulation, paint contributes an additional, readily
+        available source of Formaldehyde, helping to balance the relative concentrations of all five target VOCs in the chamber.
+        The inclusion of paint also strengthens the experimental design by preventing reliance on a single pollutant type,
+        reducing potential bias due to the physical and chemical properties unique to one material. This approach ensures that
+        the experimental conditions more accurately mimic real-world indoor settings, where VOCs originate from multiple sources
+        such as adhesives, paints, and personal care products.
+      </p>
+        To determine the appropriate volume of each pollutant to be introduced into the experimental chamber, a preliminary
+        calculation was performed to estimate the target mass of VOCs required. This calculation was based on reference
+        experimental setups from Natede et al. (2023) and is detailed in Appendix 2.
+      <p>
+        Using reference experimental setups from Natede et al. (2023), a preliminary calculation was performed to estimate the
+        target mass of VOCs required for the experimental chamber (see Appendix 2). Based on this value, the required volume of
+        each pollutant was determined using Microsoft Excel’s Solver function to ensure that the total VOC mass matched the
+        calculated target. The resulting volumes for each pollutant are summarized in Table 2.
+      </p>
+      <table class="volume-data-table">
+        <caption>Table 2: Volume required using Excel solver</caption>
+        <thead>
+          <tr>
+            <th>Pollutant</th>
+            <th>Volume Required (cm3)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elmer's White Glue</td>
+            <td>0.342</td>
+          </tr>
+          <tr>
+            <td>Aureo's Liquid Shoe Polish</td>
+            <td>0.470</td>
+          </tr>
+          <tr>
+            <td>Nippon Vinilex-5000 Paint</td>
+            <td>0.425</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <style>
+        .volume-data-table {
+          width: 100%;
+          /* Table uses whole width */
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .volume-data-table caption {
+          font-weight: bold;
+          /* Title bolded */
+          text-align: center;
+          margin-bottom: 0.5rem;
+          padding: 0 0 5px 0;
+          font-size: 1.1em;
+        }
+      
+        .volume-data-table thead {
+          background-color: #b8d4f1;
+        }
+      
+        .volume-data-table th {
+          padding: 12px;
+          text-align: center;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+        }
+      
+        .volume-data-table tbody tr {
+          background-color: #ffffff;
+        }
+      
+        .volume-data-table td {
+          padding: 12px;
+          border: 1px solid #2c3e50;
+          vertical-align: top;
+          text-align: center;
+        }
+      
+        .volume-data-table tbody tr:nth-child(odd) {
+          background-color: #f8f9fa;
+        }
+      
+        @media (max-width: 768px) {
+          .volume-data-table {
+            font-size: 0.85rem;
+          }
+      
+          .volume-data-table th,
+          .volume-data-table td {
+            padding: 8px;
+          }
+        }
+      </style>
+      <p> 
+        Although the calculated volumes in Table 2 provide a theoretical reference for estimating the expected VOC
+        concentrations, the pilot study was intentionally conducted using 2.5 mL of each pollutant instead of the calculated
+        values. This choice was made for two primary reasons. Firstly, 2.5 mL is the minimum volume that can be measured
+        accurately and consistently with the available measuring cups, ensuring precision and reproducibility. Secondly, using a
+        slightly higher volume compensates for the simplifying assumption in the preliminary calculations that all VOCs would
+        evaporate fully within the chamber. In practice, VOC volatilization depends on factors such as viscosity, diffusion, and
+        available surface area, meaning that complete evaporation may not occur. Therefore, 2.5 mL was selected as a practical
+        and conservative starting volume to ensure that VOC concentrations in the chamber were sufficiently high to detect and
+        compare the removal performance of the plant and plant–microbe setups, while still using Table 3 strictly as a
+        theoretical guide rather than an exact dosing requirement.
+      </p>
+      </div>
+
+      <div id="4.1.2 Plant Container and Airflow Design">
+        <h3>4.1.2 Plant Container and Airflow Design</h3>
+      <p>
+        The plant container was prepared to ensure consistent experimental conditions and to facilitate effective plant–microbe
+        interaction for VOC removal. To optimize pollutant exposure to the plant roots, the container was modified by cutting an
+        opening and installing a computer fan, which directs airflow from the pollutant source toward the LECA and root zone
+        (Figure 12). This arrangement ensures that VOCs pass through the rhizosphere, maximizing contact with both the plant and
+        microbial components.
+      </p>
+      <div style="display:flex; justify-content:center;">
+        <image-component tag="image" 
+          source="assets/4-Pilot Study/Plant Container.png"
+          subtitle="Figure 12: Computer Fan attached to Plant Container."
+          style="max-width:550px;">
+        </image-component>
+      </div>
+      <p>
+        LECA balls were carefully washed prior to use to remove any surface contaminants that could interfere with the results.
+        The container was filled with LECA to approximately 80% of its volume, maintaining uniform growth medium across all
+        setups (Figure 13).
+      </p>
+      <p>
+        A volume of 250 mL of water was added to each container to ensure consistent hydration (Figure 13), and the same volume
+        (250 mL) of microbial solution was introduced to the plant–microbe setups. The addition of microbes to the rhizosphere
+        enhances VOC degradation by metabolizing compounds absorbed by the plant roots, thereby improving overall removal
+        efficiency.
+      </p>
+      <div style="display:flex; justify-content:center;">
+        <image-component tag="image" 
+          source="assets/4-Pilot Study/Plant Container with Plant.png"
+          subtitle="Figure 13: Example of Plant Container set up with LECA and solution."
+          style="max-width:400px;">
+        </image-component>
+      </div>
+      
+      <div id="4.1.3 Sensor Calibration">
+        <h3>4.1.3 Sensor Calibration</h3>
+      <p>
+        Accurate measurement of total volatile organic compounds (TVOCs) is essential for evaluating the effectiveness of each
+        plant–microbe pairing. To ensure reliable data collection, the Awair Element air quality monitor was selected for use in
+        this study. The Awair Element is recognized as one of the most accurate and reliable commercially available indoor
+        air-quality sensors , capable of detecting a wide range of pollutants including TVOCs, CO₂, and particulate matter
+        (Shipped F, n.d.).
+      </p>
+      <p>  
+        Calibration of the sensors was conducted under outdoor ambient conditions for a continuous 24-hour period to establish a
+        stable and accurate baseline. This baseline provides a reference for detecting changes in VOC levels within the enclosed
+        chamber during subsequent experiments. To enhance calibration consistency, two Awair Element sensors were placed facing
+        each other during the calibration process as shown in Figure 12. This arrangement ensured that both devices sampled the
+        same air mass, minimizing discrepancies due to airflow direction or localized variations in pollutant concentration.
+      </p>
+      <div style="display:flex; justify-content:center;">
+        <image-component tag="image" 
+          source="assets/4-Pilot Study/Sensor.png"
+          subtitle="Figure 14: Placement of AWAIR Sensors."
+          style="max-width:550px;">
+        </image-component>
+      </div>
+      <p>
+        Following outdoor calibration, the sensors were allowed to stabilize briefly under indoor conditions before each
+        experimental run. This step ensured that all sensors started from comparable baseline readings, improving measurement
+        precision and repeatability across tests.
+      </p>
+      </div>
+
+      <div id="4.1.4 Chamber Modification">
+        <h3>4.1.4 Chamber Modification</h3>
+      <p>
+        In designing the experimental chamber, several factors were considered to ensure appropriate plant growth and accurate
+        VOC measurements.
+      </p>
+      <p>
+        The chamber size was selected based on several practical and methodological considerations. First, the height of the
+        chamber was chosen to accommodate the combined height of the plant and its container, ensuring that the plant remained
+        upright and unobstructed during the experiment. Second, the base area of the chamber had to be sufficiently large to
+        position both the pollutant source and the sensor far apart, minimizing the risk of the sensor detecting artificially
+        elevated VOC levels from direct release rather than from the ambient chamber environment. At the same time, the chamber
+        could not be excessively large, as a greater internal volume would dilute the VOC concentration and prolong the time
+        needed to reach measurable steady-state levels. Therefore, a moderate-sized transparent chamber (H: 56 cm × B: 39 cm ×
+        L: 42 cm) was chosen to balance spatial requirements, measurement accuracy, and experimental efficiency.
+      </p>
+      <p>
+        A transparent plastic chamber was also selected to simulate indoor conditions, providing natural light to the plants
+        while avoiding complete darkness, which could adversely affect plant metabolism and VOC uptake. Transparency also
+        facilitated visual monitoring of plant health throughout the experiment.
+      </p>
+      </div>
+
+      <div id="4.1.5 Final Experimental Setup">
+        <h3>4.1.5 Final Experimental Setup</h3>
       </div>
 
       <div id="4.2. Results and Discussions">
@@ -568,18 +1039,179 @@
           Figure 13.
         </p>
       </div>
-        <div style="width: 100%; max-width: 1000px; margin: 2rem auto;">
-    <iframe src="assets/4-Pilot Study/VOC_Concentration_Interactive.html" 
-            width="100%" 
-            height="600" 
-            frameborder="0"
-            style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    </iframe>
-    <sub style="display: block; text-align: center; margin-top: 10px;">
-      Figure 13: VOC Concentration Over Time for 2.5ml of each pollutant- Interactive visualization
-    </sub>
-  </div>
+        <table class="tvoc-table">
+          <caption><b>Table 3a: Highest TVOC Level for 2.5ml of each pollutant</b></caption>
+          <thead>
+            <tr class="section-header-row">
+              <th colspan="3">Highest TVOC Level</th>
+            </tr>
+            <tr class="subheader-row">
+              <th>Control</th>
+              <th>Plant</th>
+              <th>Plant + Microbe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>37216.6 ppb</td>
+              <td>1798.2 ppb (<span class="green-text">&#x2193;</span> <b> 95%</b>)</td>
+              <td>1596.8 ppb (<span class="green-text">&#x2193;</span> <b> 96%</b>)</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <style>
+          .tvoc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          }
+        
+          .tvoc-table caption {
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            padding: 0 0 5px 0;
+            font-size: 1.1em;
+          }
+        
+          /* Green header row for the main section */
+          .tvoc-table .section-header-row th {
+            background-color: #d9ead3;
+            /* Light green */
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #2c3e50;
+          }
+        
+          /* Blue header rows for the sub-sections */
+          .tvoc-table .subheader-row th {
+            background-color: #b8d4f1;
+            /* Light blue */
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #2c3e50;
+          }
+        
+          .tvoc-table td {
+            padding: 12px;
+            border: 1px solid #2c3e50;
+            vertical-align: top;
+            text-align: center;
+            background-color: #ffffff;
+          }
+        
+          /* Styling for the green arrows and percentages */
+          .green-text {
+            color: #1a7c2a;
+            /* Dark green for emphasis */
+            font-weight: bold;
+          }
+        </style>
+      
+      <table class="steady-state-table">
+        <caption><b>Table 3b: Time Taken to Reach Steady State</b></caption>
+        <thead>
+          <tr class="section-header-row">
+            <th colspan="2">Time Taken to Reach Steady State</th>
+          </tr>
+          <tr class="subheader-row">
+            <th>Plant</th>
+            <th>Plant + Microbe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15h</td>
+            <td>10h (<span class="green-text">&#x2193;</span> <b> 33%</b>)</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <style>
+        .steady-state-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .steady-state-table caption {
+          font-weight: bold;
+          text-align: left;
+          margin-bottom: 0.5rem;
+          padding: 0 0 5px 0;
+          font-size: 1.1em;
+        }
+      
+        /* Green header row for the main section */
+        .steady-state-table .section-header-row th {
+          background-color: #d9ead3;
+          /* Light green */
+          padding: 12px;
+          text-align: center;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+        }
+      
+        /* Blue header rows for the sub-sections */
+        .steady-state-table .subheader-row th {
+          background-color: #b8d4f1;
+          /* Light blue */
+          padding: 12px;
+          text-align: center;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+        }
+      
+        .steady-state-table td {
+          padding: 12px;
+          border: 1px solid #2c3e50;
+          vertical-align: top;
+          text-align: center;
+          background-color: #ffffff;
+        }
+      
+        /* Styling for the green arrows and percentages */
+        .steady-state-table .green-text {
+          color: #1a7c2a;
+          /* Dark green for emphasis */
+          font-weight: bold;
+        }
+      
+        @media (max-width: 768px) {
+          .steady-state-table {
+            font-size: 0.85rem;
+          }
+      
+          .steady-state-table th,
+          .steady-state-table td {
+            padding: 8px;
+          }
+        }
+      </style>
       </div>
+      <p>
+        Following the 24-hour pilot study using 2.5 mL of each pollutant, TVOC measurements indicated that the pollutant sources
+        emitted a substantial concentration of VOCs within the chamber. Examination of the VOC decay profiles revealed that both
+        the plant-only and plant–microbe setups contributed to VOC removal, consistent with the expected role of
+        phytoremediation. The plant–microbe setup demonstrated a slightly higher removal efficiency compared to plants alone,
+        achieving a 96% reduction in TVOC levels, versus 95% for the plant-only setup.
+      </p>
+      <p> 
+        Additionally, the time required for the plant–microbe system to reach steady state was approximately 33% shorter than
+        that of the plant-only system. This observation aligns with theoretical expectations that microbial activity in the
+        rhizosphere enhances VOC degradation: microbes can metabolize compounds absorbed by plant roots, thereby accelerating
+        the overall removal process. The marginally higher removal efficiency and faster stabilization observed in the
+        plant–microbe setup provide experimental evidence supporting the synergistic effect of plant–microbe interactions in VOC
+        mitigation.
+      </p>
+      
       <div id="4.3. Experimental Improvements and Methodology Refinement">
         <h3>4.3. Experimental Improvements and Methodology Refinement</h3>
         <p>
@@ -601,7 +1233,7 @@
             style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     </iframe>
     <sub style="display: block; text-align: center; margin-top: 10px;">
-      Figure 4.3: VOC Concentration Over Time for 1ml of each pollutant- Interactive visualization  
+      Figure 17: VOC Concentration Over Time for 1ml of each pollutant- Interactive visualization  
       </div>
         <p>
           Secondly, a control test conducted using an empty chamber showed a gradual increase in TVOC levels even in the
