@@ -652,12 +652,12 @@
           </p>
           <p>
             However, their primary drawback is spatial and architectural constraint. Each wall unit requires substantial vertical
-          space, a dedicated water and airflow system, and periodic maintenance, which can limit deployment in compact offices,
-          classrooms, or high-density residential units. The size of one NAAVA wall is approximately 1003(W) x 2113(H) x 350(D)
-          mm, which takes up about the same footprint as a built-in wardrobe in residences (Naava, n.d.). Its large space use
-          makes it challenging to integrate in smaller interiors, such as residences and small office areas where floor or wall
-          space is limited. Consequently, despite their proven purification potential, scalability and adaptability to diverse
-          indoor layouts remain restricted.
+            space, a dedicated water and airflow system, and periodic maintenance, which can limit deployment in compact offices,
+            classrooms, or high-density residential units. The size of one NAAVA wall is approximately 1003(W) x 2113(H) x 350(D)
+            mm, which takes up about the same footprint as a built-in wardrobe in residences (Naava, n.d.). Its large space use
+            makes it challenging to integrate in smaller interiors, such as residences and small office areas where floor or wall
+            space is limited. Consequently, despite their proven purification potential, scalability and adaptability to diverse
+            indoor layouts remain restricted.
           </p>
           <p>
             <image-component tag="image" source="assets/1-introduction/Figure 6.png"
@@ -667,9 +667,9 @@
         </ol>
           <p>
             While existing plant–microbe biofiltration systems demonstrate promising VOC-removal capabilities, each of them faces
-            critical implementation barriers, which highlight the need for a more practical and accessible biological air
-            purification system suitable for household and office environments, with the safety, compactness, and adaptability
-            required for modern urban interiors.
+            critical implementation barriers as shown in Figure 6, which highlight the need for a more practical and accessible
+            biological air purification system suitable for household and office environments, with the safety, compactness, and
+            adaptability required for modern urban interiors.
           </p>
       </div>
 
@@ -921,7 +921,7 @@
         
             #sensor-info {
               top: 30%;
-              left: 80%;
+              left: 40%;
             }
 
             #container-info {
@@ -967,13 +967,13 @@
                 container to simulate indoor air quality issues and test the plant's remediation effectiveness.</p>
             </div>
         
-            <div class="info-popup" id="sensor-info" style="top: 25%; left: 20%;">
+            <div class="info-popup" id="sensor-info">
               <h4>Sensor</h4>
               <p>Air quality sensor (Greenberry) used to continuously monitor the concentration of key VOCs and
                 temperature/humidity within the chamber.</p>
             </div>
         
-            <div class="info-popup" id="container-info" style="top: 25%; left: 20%;">
+            <div class="info-popup" id="container-info">
               <h4>Chamber</h4>
               <p>Air quality sensor (Greenberry) used to continuously monitor the concentration of key VOCs and
                 temperature/humidity within the chamber.</p>
@@ -1197,12 +1197,10 @@
         }
       
         .volume-data-table caption {
-          font-weight: bold;
-          /* Title bolded */
           text-align: center;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0rem;
           padding: 0 0 5px 0;
-          font-size: 1.1em;
+          font-size: 0.95rem;
         }
       
         .volume-data-table thead {
@@ -1342,6 +1340,13 @@
         while avoiding complete darkness, which could adversely affect plant metabolism and VOC uptake. Transparency also
         facilitated visual monitoring of plant health throughout the experiment.
       </p>
+      <div style="display:flex; justify-content:center;">
+        <image-component tag="image" 
+          source="assets/4-Pilot Study/Chamber.png"
+          subtitle="Figure 15: Orifice at the Base of Chamber."
+          style="max-width:550px;">
+        </image-component>
+      </div>
       </div>
 
       <div id="4.1.5 Final Experimental Setup">
@@ -1356,7 +1361,7 @@
         </p>
       </div>
         <table class="tvoc-table">
-          <caption><b>Table 3a: Highest TVOC Level for 2.5ml of each pollutant</b></caption>
+          <caption>Table 3a: Highest TVOC Level for 2.5ml of each pollutant</caption>
           <thead>
             <tr class="section-header-row">
               <th colspan="3">Highest TVOC Level</th>
@@ -1386,11 +1391,10 @@
           }
         
           .tvoc-table caption {
-            font-weight: bold;
-            text-align: left;
-            margin-bottom: 0.5rem;
+            text-align: center;
+            margin-bottom: 0rem;
             padding: 0 0 5px 0;
-            font-size: 1.1em;
+            font-size: 0.95 rem;
           }
         
           /* Green header row for the main section */
@@ -1430,7 +1434,7 @@
         </style>
       
       <table class="steady-state-table">
-        <caption><b>Table 3b: Time Taken to Reach Steady State</b></caption>
+        <caption>Table 3b: Time Taken to Reach Steady State</caption>
         <thead>
           <tr class="section-header-row">
             <th colspan="2">Time Taken to Reach Steady State</th>
@@ -1458,11 +1462,10 @@
         }
       
         .steady-state-table caption {
-          font-weight: bold;
-          text-align: left;
-          margin-bottom: 0.5rem;
+          text-align: center;
+          margin-bottom: 0rem;
           padding: 0 0 5px 0;
-          font-size: 1.1em;
+          font-size: 0.95em;
         }
       
         /* Green header row for the main section */
