@@ -812,8 +812,7 @@
           Before initiating the pilot study experiments, it was essential to prepare each component of the experimental setup with
           clarity and intention. Each aspect of the system—such as the chamber, plant containers, sensors, and pollutant
           sources—was designed around specific guiding questions to ensure consistency, reliability, and reproducibility. Click on
-          the corresponding buttons to explore the key design questions we aimed to answer for each component and how these
-          considerations shaped the final setup.
+          the corresponding buttons to explore the key design questions that guided the setup decisions for each component.
         </p>
         <!DOCTYPE html>
         <html lang="en">
@@ -956,27 +955,39 @@
             
             <div class="info-popup" id="plant-info">
               <h4>Plant Container</h4>
-              <p>Snake plant (<em>Sansevieria trifasciata</em>) specimen potted in soil enriched with <em>Bacillus Subtilis</em>
-                bacteria. The plant undergoes phytoremediation to absorb and break down volatile organic compounds from the
-                surrounding air.</p>
+              <ol>
+                <li>How can airflow be directed to maximize VOC exposure to the plant roots and rhizosphere?</li>
+                <li>How much water/microbe solution should be added to ensure proper hydration and microbial activity?</li>
+                <li>How should the LECA be prepared?</li>
+                <li>What proportion of the container volume should be filled with LECA to maintain uniformity?</li>
+              </ol>
             </div>
-        
+            
             <div class="info-popup" id="pollutant-info">
               <h4>Pollutant Source</h4>
-              <p>Controlled pollutant source releases a measured amount of volatile organic compounds (VOCs) into the sealed
-                container to simulate indoor air quality issues and test the plant's remediation effectiveness.</p>
+              <ol>
+                <li> What type(s) of pollutant should be used?</li>
+                <li> How much pollutant should be used?</li>
+                <li> What characteristics of the pollutant influence experimental design?</li>
+              </ol>
+            
             </div>
-        
+            
             <div class="info-popup" id="sensor-info">
               <h4>Sensor</h4>
-              <p>Air quality sensor (Greenberry) used to continuously monitor the concentration of key VOCs and
-                temperature/humidity within the chamber.</p>
+              <ol>
+                <li>What type of sensor should be used to measure VOCs reliably? </li>
+                <li>What steps are needed to stabilize the sensor before each experimental run?</li>
+              </ol>
             </div>
-        
+            
             <div class="info-popup" id="container-info">
               <h4>Chamber</h4>
-              <p>Air quality sensor (Greenberry) used to continuously monitor the concentration of key VOCs and
-                temperature/humidity within the chamber.</p>
+              <ol>
+                <li> What size should the chamber be? </li>
+                <li> How should the chamber be modified to allow power connections without compromising enclosure? </li>
+                <li> What chamber characteristics influence measurement accuracy and plant performance? </li>
+              </ol>
             </div>
           </div>
         
@@ -1351,6 +1362,35 @@
 
       <div id="4.1.5 Final Experimental Setup">
         <h3>4.1.5 Final Experimental Setup</h3>
+        <p>
+          Building on the preparation of the individual components, the experimental setup was configured to ensure controlled and
+          consistent measurement of VOC removal. The plant container was positioned such that the computer fan directed airflow
+          from the pollutant source toward the plant roots, while the sensor was placed on the opposite side of the chamber to
+          minimize direct exposure to emitted VOCs.
+        </p>
+        <div style="display:flex; justify-content:center;">
+        <image-component tag="image" 
+          source="assets/4-Pilot Study/Inside Chamber.png"
+          subtitle="Figure 16: Internal configuration of the VOC measurement chamber."
+          style="max-width:550px;">
+        </image-component>
+        </div>
+        <p>
+          The chamber was also sealed using masking tape and Blu Tack to create a fully enclosed environment, ensuring that any
+          observed reduction in VOC concentration could be attributed solely to the plant or plant–microbe system (Figure 17).
+        </p>
+
+        <p>
+          The final configuration of the experimental setup is shown in Figure 17.
+        </p>
+
+        <div style="display:flex; justify-content:center;">
+        <image-component tag="image" 
+          source="assets/4-Pilot Study/Experimental Set Up.png"
+          subtitle="Figure 17: Experimental Set up."
+          style="max-width:550px;">
+        </image-component>
+      </div>
       </div>
 
       <div id="4.2. Results and Discussions">
@@ -1359,6 +1399,13 @@
           The pilot study experiment set up with 2.5 mL of each pollutant was allowed to run for 24h to obtain the results in
           Figure 13.
         </p>
+      <div style="width: 100%; max-width: 1000px; margin: 2rem auto;">
+        <iframe src="assets/4-Pilot Study/VOC_Concentration_Interactive.html" width="100%" height="600" frameborder="0"
+          style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        </iframe>
+        <sub style="display: block; text-align: center; margin-top: 10px;">
+          Figure 17: VOC Concentration Over Time for 2.5ml of each pollutant- Interactive visualization
+      </div>
       </div>
         <table class="tvoc-table">
           <caption>Table 3a: Highest TVOC Level for 2.5ml of each pollutant</caption>
@@ -1428,7 +1475,6 @@
           /* Styling for the green arrows and percentages */
           .green-text {
             color: #1a7c2a;
-            /* Dark green for emphasis */
             font-weight: bold;
           }
         </style>
@@ -2071,7 +2117,196 @@
     <div id="appendix" class="appendix">
       <sl-divider></sl-divider>
       <h2>Appendix</h2>
-      <p>Soemthing </p>
+      <p>
+        Appendix 1: Summary of Research Studies of VOC Removal Efficiency of Shortlisted Plants: Sansevieria trifasciata (Snake
+        Plant), Epipremnum aureum (Money Plant), Zamioculcas zamiifolia (ZZ Plant), and Dracaena fragrans (Dragon Plant)
+      </p>
+      <table class="voc-study-table">
+        <caption>Table 4: Summary of VOC Removal Efficacy by Different Plant Species from Literature</caption>
+        <thead>
+          <tr class="subheader-row">
+            <th>Pollutant</th>
+            <th>Plant</th>
+            <th>Pollutant Concentration</th>
+            <th>Removal Rate/Efficiency</th>
+            <th>Sources</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Benzene</td>
+            <td>Dracaena sanderiana &gt; Ixoraebarbata craib &gt; Sansevieria trifasciata &gt; Chamaedorea seifrizii &gt;
+              Monster acuminata &gt; Philodendron domesticum &gt; Epipremnum aureum &gt; Scindapsus aureus</td>
+            <td>18 ppm = 62,392 ug/m3 (1 ppm benzene = 3466 ug/m3 = 1000 ppb)</td>
+            <td>60–77% / 10 umol</td>
+            <td>(Treesubsuntorn et al., 2012)</td>
+          </tr>
+          <tr>
+            <td>Formaldehyde</td>
+            <td>Sansevieria trifasciatavar 'Laurentii' &gt; Chlorophytum comosum 'Mediopictum' &gt; Aloevera 'Chinensis' &gt;
+              Scindapsus aureum</td>
+            <td>10uL 40% formaldehyde solution</td>
+            <td>1.76, 1.27... mg/h/m2</td>
+            <td>(Meng et al., 2012)</td>
+          </tr>
+          <tr>
+            <td>Toluene</td>
+            <td>C3 Chlorophytum comosum + CAM Sansevieria trifasciata &gt; facultative CAM Zamioculcas zamiifolia, C3 Dracaena
+              sanderiana, CAM cycling Euphorbia milii, CAM Sansevieria kirkii</td>
+            <td>3.92 mg/m3</td>
+            <td>1 m3 / 2–3h</td>
+            <td>(Treesubsuntorn et al., 2018)</td>
+          </tr>
+          <tr>
+            <td>Formaldehyde</td>
+            <td>CAM S. trifasciata + C3 Chlorophytum comosum</td>
+            <td>120–150 ppm</td>
+            <td>80–90%</td>
+            <td>(Siswanto et al.)</td>
+          </tr>
+          <tr>
+            <td>Benzene</td>
+            <td>CAM S. trifasciata + C3 Chlorophytum comosum</td>
+            <td>15–35 ppb</td>
+            <td>80–90%</td>
+            <td>(Siswanto et al.)</td>
+          </tr>
+          <tr>
+            <td>Xylene</td>
+            <td>CAM S. trifasciata + C3 Chlorophytum comosum</td>
+            <td>30–70 ppb</td>
+            <td>80–90%</td>
+            <td>(Siswanto et al.)</td>
+          </tr>
+          <tr>
+            <td rowspan="2">TVOCs</td>
+            <td rowspan="2">Epipremnum aureum 40%, Nephrolepis exaltata 3%, Peperomia obtusifolia 10%, Schefflera arboricola
+              5% and Spathiphyllum wallisii 42% (total 96)</td>
+            <td>120 ppb</td>
+            <td>72.50%</td>
+            <td rowspan="2">(Pettit, Irga, et al., 2019)</td>
+          </tr>
+          <tr>
+            <td>300 ppbv</td>
+            <td>28%</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Xylene</td>
+            <td>Zamioculcas zamiifolia &gt; Aglaonema commutatum &gt; Philodendron martianum / Sansevieria Hyacinthoides /
+              Aglaonema rotundum / Fittonia albivenis &gt; Alternanthera bettzickiana, Drimiopsis botryoides, Aloe vera,
+              Chlorophytum comosum, Cordyline fruticosa, Muehlenbeckia platyclada, Tradescantia spathacea, Guzmania lingulate,
+              Cyperus alternifolius</td>
+            <td rowspan="2">20 ppm / 12 umol</td>
+            <td>0.86 mmol/m2 / 88%</td>
+            <td rowspan="2">(Sriprapat et al., 2014)</td>
+          </tr>
+          <tr>
+            <td>Facultative CAM Z. zamiifolia + CAM S. hyacinthoides + C3 A. commutatum in dark</td>
+            <td>0.29 mmol/m2</td>
+          </tr>
+          <tr>
+            <td>Benzene</td>
+            <td>Zamioculcas zamiifolia, Aglaonema modestum</td>
+            <td>25 ppm</td>
+            <td>100%, 75% to below 100 ppb</td>
+            <td>(Tarran et al., 2008)</td>
+          </tr>
+          <tr>
+            <td>BTEX</td>
+            <td>Well-watered Zamioculcas zamiifolia</td>
+            <td>20 ppm</td>
+            <td>0.86–0.96 mmol/m2</td>
+            <td>(Sriprapat et al., 2013)</td>
+          </tr>
+          <tr>
+            <td>Formaldehyde, xylene</td>
+            <td>Aechmea fasciata, Aglaonema ‘Silver Queen’, Aloe barbadensis, Anthurium andraeanum, Calathea ornata,
+              Chamaedorea elegans, Chlorophytum comosum ’Vittatum’, Chrysanthemum morifolium, Cissus rhombifolia, Cyclamen
+              persicum, Dendrobium sp., Dieffenbachia camille, Dieffenbachia ‘Exotica Compacta’, Dieffenbachia maculata,
+              Dracaena deremensis ‘Janet Craig’, Dracaena deremensis ‘Warneckii’, Dracaena fragrans, Dracaena marginata,
+              Euphorbia pulcherrima, Ficus benjamina, Ficus sabre, Guzmania ‘Cherry’, Hedera helix, Homalomena sp., Kalanchoë,
+              Liriope spicata, Neoregelia cv., Nephrolepis exaltata ‘Bostoniensis’, Nephrolepis obliterata, Phalaenopsis sp.,
+              Phoenix roebelenii, Rhapis excelsa, Rhododendron indicum, Sansevieria trifasciata, Senecio cruentus,
+              Spathiphyllum ‘Clevelandii’, Syngonium podophyllum, Tulip ‘Yellow Present’</td>
+            <td>N/A</td>
+            <td>47–1,863 ug/h</td>
+            <td>(Wolverton et al., 1993)</td>
+          </tr>
+          <tr>
+            <td>Benzene, pentane, toluene</td>
+            <td>Chlorophytum comosum, Dracaena deremensis, Ficus elastica, Kalanchoë blossfeldiana, Magnesia sp., Pelargonium
+              domesticum, Primula sinensis, Saxifraga stolonifera, Tradescantia fluminensis</td>
+            <td>33,543</td>
+            <td>0.6–8.5 ug/g/day</td>
+            <td>(Cornejo et al., 1999)</td>
+          </tr>
+          <tr>
+            <td>Benzene</td>
+            <td>Dracaena deremensis ‘Janet Craig’, Dracaena marginata, Epipremnum aureum, Howea forsteriana, Schefflera
+              actinophylla ‘Amate’, Spathiphyllum floribundum ‘Petite’, Spathiphyllum floribundum ‘Sensation’</td>
+            <td>80,000</td>
+            <td>59–337 ppm/day/m2</td>
+            <td>(Orwell et al., 2004)</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <style>
+        .voc-study-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .voc-study-table caption {
+          text-align: left;
+          margin-bottom: 0rem;
+          padding: 0 0 5px 0;
+          font-size: 0.95em;
+        }
+      
+        /* Blue header rows for the main headers */
+        .voc-study-table .subheader-row th {
+          background-color: #b8d4f1;
+          padding: 12px;
+          text-align: center;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+          vertical-align: middle;
+        }
+      
+        /* Ensure all content cells have white background and left alignment for large text blocks */
+        .voc-study-table td {
+          padding: 12px;
+          border: 1px solid #2c3e50;
+          vertical-align: top;
+          text-align: left;
+          background-color: #ffffff;
+        }
+      
+        /* Apply light stripe effect */
+        .voc-study-table tbody tr:nth-child(odd) {
+          background-color: #f8f9fa;
+        }
+      
+        @media (max-width: 768px) {
+          .voc-study-table {
+            font-size: 0.8rem;
+            /* Allow scrolling for readability on small screens */
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+          }
+      
+          .voc-study-table th,
+          .voc-study-table td {
+            padding: 8px;
+            white-space: normal;
+          }
+        }
+      </style>
         
   </div>
   <!--========================================================================-->
