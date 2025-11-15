@@ -2122,7 +2122,6 @@
         Plant), Epipremnum aureum (Money Plant), Zamioculcas zamiifolia (ZZ Plant), and Dracaena fragrans (Dragon Plant)
       </p>
       <table class="voc-study-table">
-        <caption>Table 4: Summary of VOC Removal Efficacy by Different Plant Species from Literature</caption>
         <thead>
           <tr class="subheader-row">
             <th>Pollutant</th>
@@ -2307,7 +2306,291 @@
           }
         }
       </style>
-        
+      
+      <p>
+        Appendix 2: Calculation of Amount of Pollutant
+      </p>
+      <p>
+        Based on Natede (2023), who used 30 cm³ of pollutant in a 33 m³ chamber, the corresponding pollutant volume per cubic
+        metre is approximately 0.909 cm³/m³. For the experimental chamber in this study (0.0917 m³; 56 cm × 39 cm × 42 cm), the
+        equivalent pollutant volume is:<br><b><br></b><br>0.0917 m³ × 0.909 cm³/m³ ≈ 0.083 cm³<br><b><br></b><br>To convert the
+        calculated pollutant volume into the corresponding mass for each target VOC, the density of each compound must be
+        considered (Table 6).
+      <table class="density-table">
+        <caption>Table 6: Densities of FBTEX compounds</caption>
+        <thead>
+          <tr class="subheader-row">
+            <th>Compound</th>
+            <th>Density (g/cm³)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Formaldehyde</td>
+            <td>0.8153</td>
+          </tr>
+          <tr>
+            <td>Benzene</td>
+            <td>0.8765</td>
+          </tr>
+          <tr>
+            <td>Toluene</td>
+            <td>0.8623</td>
+          </tr>
+          <tr>
+            <td>Ethylbenzene</td>
+            <td>0.867</td>
+          </tr>
+          <tr>
+            <td>Xylene (mixed isomers)</td>
+            <td>~ 0.86–0.88</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <style>
+        .density-table {
+          width: 100%;
+          /* Table uses whole width */
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .density-table caption {
+          text-align: center;
+          margin-bottom: 0rem;
+          padding: 0 0 5px 0;
+          font-size: 0.95em;
+        }
+      
+        /* Blue header row */
+        .density-table .subheader-row th {
+          background-color: #b8d4f1;
+          /* Light blue */
+          padding: 12px;
+          text-align: center;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+        }
+      
+        .density-table tbody tr {
+          background-color: #ffffff;
+        }
+      
+        .density-table td {
+          padding: 12px;
+          border: 1px solid #2c3e50;
+          vertical-align: top;
+          text-align: center;
+          /* Center-aligned cell content */
+        }
+      
+        /* Optional: Stripe effect */
+        .density-table tbody tr:nth-child(odd) {
+          background-color: #f8f9fa;
+        }
+      
+        @media (max-width: 768px) {
+          .density-table {
+            font-size: 0.85rem;
+          }
+      
+          .density-table th,
+          .density-table td {
+            padding: 8px;
+          }
+        }
+      </style>
+      <p>
+        Assuming equal composition of the different compounds, the average density is used for simplicity in calculations
+        (approximately 0.856 g/cm³). The mass of the pollutant required can be calculated using the standard
+        relation:<br><b><br></b><br>Mass (g) = Volume (cm³) × Density (g/cm³)<br>Mass ≈ 0.083 cm³ × 0.856 g/cm³ ≈ 0.071
+        g<br><b><br></b><br>Table 7 summarizes the densities, VOC content, and corresponding mass of VOC per unit volume for
+        each pollutant used in the pilot study. By multiplying the density by the VOC fraction, the effective mass of VOCs per
+        unit volume of each pollutant was calculated. <br><br>
+      </p>
+      <table class="pollutant-density-table">
+        <caption>Table 7: Densities of Pollutants</caption>
+        <thead>
+          <tr class="subheader-row">
+            <th>Pollutant</th>
+            <th>Density (g/cm³)</th>
+            <th>VOC (% by weight)</th>
+            <th>Mass of VOC per unit volume of pollutant (g/cm³)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elmer’s White Glue</td>
+            <td>1.07</td>
+            <td>&lt;1–10%</td>
+            <td>0.0535</td>
+          </tr>
+          <tr>
+            <td>Aureo’s Liquid Shoe Polish</td>
+            <td>0.754</td>
+            <td>15%</td>
+            <td>0.1131</td>
+          </tr>
+          <tr>
+            <td>Nippon Vinilex-5000 Paint</td>
+            <td>1.43</td>
+            <td>&lt;2% (low-VOC)</td>
+            <td>0.0215</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <style>
+        .pollutant-density-table {
+          width: 100%;
+          /* Table uses whole width */
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .pollutant-density-table caption {
+          text-align: center;
+          margin-bottom: 0rem;
+          padding: 0 0 5px 0;
+          font-size: 0.95em;
+        }
+      
+        /* Blue header row */
+        .pollutant-density-table .subheader-row th {
+          background-color: #b8d4f1;
+          /* Light blue */
+          padding: 12px;
+          text-align: center;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+        }
+      
+        .pollutant-density-table tbody tr {
+          background-color: #ffffff;
+        }
+      
+        .pollutant-density-table td {
+          padding: 12px;
+          border: 1px solid #2c3e50;
+          vertical-align: top;
+          text-align: center;
+          /* Center-aligned cell content */
+        }
+      
+        /* Stripe effect */
+        .pollutant-density-table tbody tr:nth-child(odd) {
+          background-color: #f8f9fa;
+        }
+      
+        @media (max-width: 768px) {
+          .pollutant-density-table {
+            font-size: 0.85rem;
+          }
+      
+          .pollutant-density-table th,
+          .pollutant-density-table td {
+            padding: 8px;
+          }
+        }
+      </style>
+      <p>
+        To determine the appropriate volume of each pollutant to achieve the target mass of VOCs in the chamber, the Solver
+        function in Microsoft Excel was employed. Arbitrary initial volumes (0.5cm3 each) were assigned to each pollutant, and
+        the corresponding mass of VOCs was calculated based on the density and VOC content (as shown in Table X). These values
+        were then iteratively adjusted using the Solver function to match the target total VOC mass of 0.071 g, calculated
+        previously for the chamber volume. The resulting volumes derived from this optimization are shown in Table 8.
+      </p>
+      <table class="volume-data-table-8">
+        <caption>Table 8: Volume required using Excel solver</caption>
+        <thead>
+          <tr class="subheader-row">
+            <th>Pollutant</th>
+            <th>Volume Required (cm3)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elmer’s White Glue</td>
+            <td>0.342</td>
+          </tr>
+          <tr>
+            <td>Aureo’s Liquid Shoe Polish</td>
+            <td>0.470</td>
+          </tr>
+          <tr>
+            <td>Nippon Vinilex-5000 Paint</td>
+            <td>0.425</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <style>
+        .volume-data-table-8 {
+          width: 100%;
+          /* Table uses whole width */
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .volume-data-table-8 caption {
+          text-align: center;
+          margin-bottom: 0rem;
+          padding: 0 0 5px 0;
+          font-size: 0.95em;
+        }
+      
+        /* Blue header row */
+        .volume-data-table-8 .subheader-row th {
+          background-color: #b8d4f1;
+          /* Light blue */
+          padding: 12px;
+          text-align: center;
+          font-weight: bold;
+          border: 1px solid #2c3e50;
+        }
+      
+        .volume-data-table-8 tbody tr {
+          background-color: #ffffff;
+        }
+      
+        .volume-data-table-8 td {
+          padding: 12px;
+          border: 1px solid #2c3e50;
+          vertical-align: top;
+          text-align: center;
+          /* Center-aligned cell content */
+        }
+      
+        /* Stripe effect */
+        .volume-data-table-8 tbody tr:nth-child(odd) {
+          background-color: #f8f9fa;
+        }
+      
+        @media (max-width: 768px) {
+          .volume-data-table-8 {
+            font-size: 0.85rem;
+          }
+      
+          .volume-data-table-8 th,
+          .volume-data-table-8 td {
+            padding: 8px;
+          }
+        }
+      </style>
+    <p>
+      It should be noted that the volumes determined using the Excel Solver are dependent on the initial concentrations
+      specified prior to the optimization. By testing multiple initial concentration values, it was observed that starting
+      with an initial guess of 0.5 cm³ for each pollutant resulted in a more balanced distribution of volumes among the three
+      sources. This outcome aligns with practical considerations for the experimental procedure, as it facilitates easier
+      measurement and handling of the pollutants while maintaining consistency across experimental runs.
+    </p>
   </div>
   <!--========================================================================-->
   <!--=======================End of REPORT WRITING============================-->
